@@ -124,8 +124,28 @@ Só entrar aqui depois que o fluxo ponta a ponta (Fases 0–6) estiver funcionan
 1. Download/armazenamento local das imagens dos anúncios (evitar hotlink quebrado).
 2. Rate limiting no scraper + fila (mesmo que simples, tipo `p-queue`) para evitar rajadas de requisições.
 3. Tela/endpoint de revisão manual para imóveis com `confianca_extracao` baixa ou validação numérica reprovada.
-4. (Opcional) Integração OSRM local para distância real de caminhada em vez de linha reta.
-5. Visualização do histórico de preço por imóvel (usar a tabela `imoveis_historico_preco`).
+4. Visualização do histórico de preço por imóvel (usar a tabela `imoveis_historico_preco`).
+
+---
+
+## Fase 8 — OSRM Local, Camadas GeoJSON de POIs e Traçado de Rotas
+
+1. **8.1 — OSRM local (Pé e Carro) com Fallback Resiliente:**
+   * Serviço de roteamento OSRM configurado para Porto Alegre com suporte a perfis de caminhada (`foot`) e condução (`car`).
+   * Camada de serviço no backend com fallback transparente para cálculo geodésico `ST_Distance` / Haversine caso o OSRM esteja indisponível, garantindo que o motor de scoring não seja interrompido.
+   * Endpoint de rotas: `GET /rotas?origemLng=...&origemLat=...&destinoLng=...&destinoLat=...&perfil=pe|carro`.
+
+2. **8.2 — Camadas Vetoriais GeoJSON no MapLibre (Alta Performance):**
+   * Endpoint `GET /pois` fornecendo todos os pontos de interesse cadastrados no formato GeoJSON FeatureCollection.
+   * Renderização de POIs no MapLibre via GeoJSON Sources e Circle Layers com estilização por categoria (farmácias, supermercados, padarias, parques, referências), substituindo marcadores HTML no DOM para assegurar 60fps mesmo com milhares de pontos.
+   * Painel retrátil de filtros no mapa para ativar/desativar camadas individuais por categoria.
+
+3. **8.3 — Traçado de Rota sob Demanda:**
+   * Interação direta no mapa: clicar em um imóvel e em um ponto de interesse (ou no botão "Traçar Rota") desenha a geometria do trajeto real pelas ruas.
+   * Alternador de modalidade (A pé / De carro) com exibição de distância exata em metros/km e estimativa de tempo de deslocamento.
+   * Botão de limpar rota e centralização dinâmica da câmera do mapa sobre o traçado.
+
+**Critério de saída:** mapa renderiza POIs via camadas GeoJSON com alternador por categoria, e ao selecionar um imóvel e um POI a rota real é calculada e desenhada pelo OSRM (ou fallback em linha reta se OSRM indisponível).
 
 ---
 

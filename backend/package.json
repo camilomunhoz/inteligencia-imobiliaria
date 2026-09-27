@@ -19,6 +19,7 @@
     "test:fase5": "tsx src/scripts/test-fase5.ts",
     "test:fase6": "tsx src/scripts/test-fase6.ts",
     "test:fase7": "tsx src/scripts/test-fase7.ts",
+    "test:fase8": "tsx src/scripts/test-fase8.ts",
     "seed:pois": "tsx src/scripts/seed-pois.ts",
     "seed:imoveis": "tsx src/scripts/seed-sample-imoveis.ts",
     "pois:import": "tsx src/scripts/import-pois.ts",

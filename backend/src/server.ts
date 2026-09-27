@@ -13,6 +13,7 @@ import {
   scoreImoveisPartitioned,
   getImovelScoreById,
 } from './services/scoring.js';
+import { getRoute } from './services/osrm.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -390,6 +391,81 @@ export function buildServer(): FastifyInstance {
       success: true,
       message: 'Imóvel revisado e atualizado com sucesso.',
       id,
+    };
+  });
+
+  // Traçado de rotas viárias (OSRM local com fallback geodésico)
+  app.get<{
+    Querystring: {
+      origemLng?: string;
+      origemLat?: string;
+      destinoLng?: string;
+      destinoLat?: string;
+      perfil?: 'pe' | 'carro';
+    };
+  }>('/rotas', async (request, reply) => {
+    const { origemLng, origemLat, destinoLng, destinoLat, perfil } = request.query;
+
+    const fromLng = parseFloat(origemLng || '');
+    const fromLat = parseFloat(origemLat || '');
+    const toLng = parseFloat(destinoLng || '');
+    const toLat = parseFloat(destinoLat || '');
+
+    if (isNaN(fromLng) || isNaN(fromLat) || isNaN(toLng) || isNaN(toLat)) {
+      return reply.status(400).send({
+        error: 'Coordenadas de origem e destino inválidas ou ausentes.',
+      });
+    }
+
+    const route = await getRoute(
+      fromLng,
+      fromLat,
+      toLng,
+      toLat,
+      perfil === 'carro' ? 'carro' : 'pe'
+    );
+    return route;
+  });
+
+  // Camadas de Pontos de Interesse (POIs) no formato GeoJSON FeatureCollection
+  app.get<{ Querystring: { categoria?: string } }>('/pois', async (request) => {
+    const categoria = request.query.categoria?.toLowerCase();
+
+    let query;
+    if (categoria) {
+      query = sql`
+        SELECT id, nome, categoria, ST_X(geom) as lng, ST_Y(geom) as lat
+        FROM pontos_interesse
+        WHERE categoria = ${categoria}
+        ORDER BY id ASC;
+      `;
+    } else {
+      query = sql`
+        SELECT id, nome, categoria, ST_X(geom) as lng, ST_Y(geom) as lat
+        FROM pontos_interesse
+        ORDER BY id ASC;
+      `;
+    }
+
+    const res = await db.execute(query);
+
+    const features = res.rows.map((r: any) => ({
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [Number(r.lng), Number(r.lat)],
+      },
+      properties: {
+        id: Number(r.id),
+        nome: r.nome,
+        categoria: r.categoria,
+      },
+    }));
+
+    return {
+      type: 'FeatureCollection',
+      total: features.length,
+      features,
     };
   });
 

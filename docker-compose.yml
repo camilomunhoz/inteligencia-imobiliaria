@@ -28,8 +28,20 @@ services:
       OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen2.5:7b}
       GEOCODER_PRIMARY: ${GEOCODER_PRIMARY:-nominatim}
       GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY:-}
+      OSRM_FOOT_URL: ${OSRM_FOOT_URL:-http://osrm:5000}
+      OSRM_CAR_URL: ${OSRM_CAR_URL:-http://osrm:5000}
     ports:
       - "3001:3001"
+
+  osrm:
+    image: ghcr.io/project-osrm/osrm-backend:v5.27.1
+    container_name: imoveis_osrm
+    restart: unless-stopped
+    command: osrm-routed --algorithm mld /data/porto-alegre.osrm
+    volumes:
+      - ./osrm-data:/data
+    ports:
+      - "5000:5000"
 
   frontend:
     build:
