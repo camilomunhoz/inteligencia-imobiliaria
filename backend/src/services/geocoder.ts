@@ -2,6 +2,7 @@ export interface GeocodeResult {
   lat: number;
   lng: number;
   provider: 'nominatim' | 'google' | 'bairro_fallback' | 'poa_default';
+  fonte?: string;
   formattedAddress?: string;
 }
 

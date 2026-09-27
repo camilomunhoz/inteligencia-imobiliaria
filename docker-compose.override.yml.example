@@ -1,0 +1,15 @@
+# Configuração para desenvolvimento local com hot-reload (tsx watch)
+# Para ativar este modo, renomeie este arquivo para docker-compose.override.yml
+# ou use: docker compose -f docker-compose.yml -f docker-compose.override.yml.example up -d
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: build
+    command: npm run dev
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: development

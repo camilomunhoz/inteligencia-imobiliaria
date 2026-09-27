@@ -153,7 +153,7 @@ export async function importarImovelPorUrl(
   let geocode;
   try {
     geocode = await geocodeAddress(extracted.endereco, extracted.bairro);
-    notify('geocoding', 'done', `Geocodificação concluída via ${geocode.fonte}: (${geocode.lat.toFixed(4)}, ${geocode.lng.toFixed(4)}).`);
+    notify('geocoding', 'done', `Geocodificação concluída via ${geocode.provider}: (${geocode.lat.toFixed(4)}, ${geocode.lng.toFixed(4)}).`);
   } catch (geoError: unknown) {
     const err = geoError as Error;
     notify('geocoding', 'error', `Falha ao geocodificar: ${err.message}`);
