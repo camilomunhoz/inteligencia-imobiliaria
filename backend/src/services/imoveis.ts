@@ -60,10 +60,15 @@ export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
     };
   }
 
-  // 5. Validação numérica pós-LLM
+  // 5. Validação numérica pós-LLM e cálculo de métricas
+  const tipoTransacao = extracted.tipo_transacao;
   const preco = Number(extracted.preco);
+  const condominio = Number(extracted.condominio) || 0;
+  const iptu = Number(extracted.iptu) || 0;
   const areaUtil = Number(extracted.area_util);
   const precoM2 = areaUtil > 0 ? Number((preco / areaUtil).toFixed(2)) : null;
+  const custoTotalMensal =
+    tipoTransacao === 'aluguel' ? Number((preco + condominio + iptu).toFixed(2)) : null;
 
   // 6. Se o imóvel já existia, atualizar apenas preço e histórico
   if (existente.length > 0) {
@@ -73,14 +78,22 @@ export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
     // Inserir novo histórico de preço
     await db.insert(imoveisHistoricoPreco).values({
       imovelId: imovelExistente.id,
+      tipoTransacao,
       preco: String(preco),
+      condominio: String(condominio),
+      iptu: String(iptu),
+      custoTotalMensal: custoTotalMensal ? String(custoTotalMensal) : null,
     });
 
-    // Atualizar preço atual e data de atualização
+    // Atualizar registro atual
     const updated = await db
       .update(imoveis)
       .set({
+        tipoTransacao,
         preco: String(preco),
+        condominio: String(condominio),
+        iptu: String(iptu),
+        custoTotalMensal: custoTotalMensal ? String(custoTotalMensal) : null,
         precoM2: precoM2 ? String(precoM2) : null,
         atualizadoEm: new Date(),
       })
@@ -101,12 +114,16 @@ export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
   const geocode = await geocodeAddress(extracted.endereco, extracted.bairro);
 
   // 8. Persistir novo imóvel no PostgreSQL com PostGIS Point
-  console.log(`[Importador] Gravando novo imóvel no banco...`);
+  console.log(`[Importador] Gravando novo imóvel (${tipoTransacao}) no banco...`);
   const inserted = await db.execute(sql`
     INSERT INTO imoveis (
       url_origem,
+      tipo_transacao,
       titulo,
       preco,
+      condominio,
+      iptu,
+      custo_total_mensal,
       area_util,
       preco_m2,
       endereco,
@@ -118,8 +135,12 @@ export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
       geom
     ) VALUES (
       ${trimmedUrl},
+      ${tipoTransacao},
       ${extracted.titulo},
       ${preco},
+      ${condominio},
+      ${iptu},
+      ${custoTotalMensal},
       ${areaUtil},
       ${precoM2},
       ${extracted.endereco},
@@ -130,15 +151,19 @@ export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
       ${JSON.stringify(cleaned.images)}::jsonb,
       ST_SetSRID(ST_MakePoint(${geocode.lng}, ${geocode.lat}), 4326)
     )
-    RETURNING id, titulo, preco, area_util, preco_m2, endereco, bairro, posicao_solar, confianca_extracao, ST_AsText(geom) as geom_wkt;
+    RETURNING id, tipo_transacao, titulo, preco, condominio, iptu, custo_total_mensal, area_util, preco_m2, endereco, bairro, posicao_solar, confianca_extracao, ST_AsText(geom) as geom_wkt;
   `);
 
-  const novoImovel = inserted.rows[0] as { id: number; titulo: string; preco: string; area_util: string };
+  const novoImovel = inserted.rows[0] as { id: number; tipo_transacao: string; titulo: string; preco: string; area_util: string };
 
   // Gravar histórico inicial de preço
   await db.insert(imoveisHistoricoPreco).values({
     imovelId: novoImovel.id,
+    tipoTransacao,
     preco: String(preco),
+    condominio: String(condominio),
+    iptu: String(iptu),
+    custoTotalMensal: custoTotalMensal ? String(custoTotalMensal) : null,
   });
 
   return {

@@ -1,6 +1,9 @@
 export interface ExtractedImovelData {
+  tipo_transacao: 'venda' | 'aluguel';
   titulo: string;
   preco: number;
+  condominio: number;
+  iptu: number;
   area_util: number;
   endereco: string;
   bairro: string;
@@ -12,13 +15,26 @@ export interface ExtractedImovelData {
 const PROPERTY_JSON_SCHEMA = {
   type: 'object',
   properties: {
+    tipo_transacao: {
+      type: 'string',
+      enum: ['venda', 'aluguel'],
+      description: 'Modalidade do anúncio: "venda" (para comprar) ou "aluguel" (locação)',
+    },
     titulo: {
       type: 'string',
       description: 'Título conciso do anúncio do imóvel',
     },
     preco: {
       type: 'number',
-      description: 'Preço de venda do imóvel em Reais (apenas o número, ex: 450000.00)',
+      description: 'Preço principal em Reais: valor de VENDA ou valor mensal de ALUGUEL (apenas o número, ex: 450000 ou 2500)',
+    },
+    condominio: {
+      type: 'number',
+      description: 'Valor mensal da taxa de condomínio em Reais (0 se não informado ou isento)',
+    },
+    iptu: {
+      type: 'number',
+      description: 'Valor mensal do IPTU em Reais (0 se não informado ou isento)',
     },
     area_util: {
       type: 'number',
@@ -48,8 +64,11 @@ const PROPERTY_JSON_SCHEMA = {
     },
   },
   required: [
+    'tipo_transacao',
     'titulo',
     'preco',
+    'condominio',
+    'iptu',
     'area_util',
     'endereco',
     'bairro',
@@ -71,13 +90,16 @@ export async function extractWithOllama(
 Sua tarefa é extrair estritamente as informações do anúncio imobiliário fornecido abaixo.
 
 Instruções cruciais:
-1. Extraia o valor de VENDA (campo "preco") como número float (ex: se for R$ 450.000, coloque 450000). Não confunda com condomínio ou IPTU.
-2. Extraia a área útil ou privativa (campo "area_util") em m² como número float (ex: 65).
-3. Formate o "endereco" com Rua/Av, Bairro, "Porto Alegre - RS". Se não houver número, use apenas rua e bairro.
-4. Identifique o "bairro".
-5. Se a orientação solar for citada (manhã = Leste, tarde = Oeste, Norte, Sul), preencha "posicao_solar". Se não for mencionada, use "Indefinido".
-6. Em "comentario_analise", destaque resumidamente os pontos fortes e eventuais pontos fracos/atenções.
-7. Em "confianca_extracao", avalie sua certeza sobre os dados encontrados: "alta" se preço, área e endereço estão explícitos; "media" se faltou endereço exato mas tem bairro e valores; "baixa" se algum dado essencial está duvidoso.
+1. "tipo_transacao": Identifique com máxima atenção se o anúncio é de "venda" (comprar) ou de "aluguel" (locação).
+2. "preco": Se for venda, coloque o valor total de venda. Se for aluguel, coloque o valor mensal do aluguel básico. Não junte condomínio ou IPTU no campo "preco".
+3. "condominio": Taxa mensal de condomínio (apenas o número, ou 0 se não informado).
+4. "iptu": Valor mensal de IPTU (apenas o número, ou 0 se não informado). Se o anúncio trouxer IPTU anual, divida por 12.
+5. "area_util": Área útil ou privativa em m² (número float, ex: 65).
+6. "endereco": Formate com Rua/Av, Bairro, "Porto Alegre - RS". Se não houver número, use apenas rua e bairro.
+7. "bairro": Nome do bairro em Porto Alegre.
+8. "posicao_solar": Se a orientação for citada (manhã = Leste, tarde = Oeste, Norte, Sul), preencha. Caso contrário, use "Indefinido".
+9. "comentario_analise": Destaque pontos fortes e eventuais pontos fracos/atenções.
+10. "confianca_extracao": "alta" se valores e localização estiverem explícitos; "media" se faltou endereço exato mas tem bairro e valores; "baixa" se algum valor essencial estiver duvidoso.
 
 Título original da página: ${pageTitle}
 
@@ -100,7 +122,7 @@ ${markdownText}
       format: PROPERTY_JSON_SCHEMA,
       stream: false,
       options: {
-        temperature: 0.1, // temperatura baixa para precisão numérica
+        temperature: 0.1,
       },
     }),
   });
@@ -126,17 +148,24 @@ ${markdownText}
     throw new Error(`Erro ao fazer parse do JSON retornado pelo Ollama: ${rawContent}`);
   }
 
-  // Validação estrita pós-LLM dos campos numéricos
+  // Sanitização e validação numérica pós-LLM
+  parsed.condominio = Math.max(0, Number(parsed.condominio) || 0);
+  parsed.iptu = Math.max(0, Number(parsed.iptu) || 0);
+
   if (typeof parsed.preco !== 'number' || isNaN(parsed.preco) || parsed.preco <= 0) {
-    console.warn(`[LLM] Preco invalido recebido: ${parsed.preco}. Marcando confianca como baixa.`);
+    console.warn(`[LLM] Preço inválido recebido: ${parsed.preco}. Marcando confiança como baixa.`);
     parsed.preco = Math.max(0, Number(parsed.preco) || 0);
     parsed.confianca_extracao = 'baixa';
   }
 
   if (typeof parsed.area_util !== 'number' || isNaN(parsed.area_util) || parsed.area_util <= 0) {
-    console.warn(`[LLM] Area util invalida recebida: ${parsed.area_util}. Marcando confianca como baixa.`);
+    console.warn(`[LLM] Área útil inválida recebida: ${parsed.area_util}. Marcando confiança como baixa.`);
     parsed.area_util = Math.max(0, Number(parsed.area_util) || 0);
     parsed.confianca_extracao = 'baixa';
+  }
+
+  if (parsed.tipo_transacao !== 'aluguel' && parsed.tipo_transacao !== 'venda') {
+    parsed.tipo_transacao = 'venda';
   }
 
   return parsed;

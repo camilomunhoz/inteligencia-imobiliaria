@@ -15,6 +15,13 @@
       "when": 1790543683033,
       "tag": "0001_add_poi_hash_id",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790544960766,
+      "tag": "0002_add_aluguel_support",
+      "breakpoints": true
     }
   ]
 }

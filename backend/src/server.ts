@@ -29,7 +29,7 @@ export function buildServer(): FastifyInstance {
     };
   });
 
-  // Importar imóvel por URL (Endpoint principal da Fase 3)
+  // Importar imóvel por URL (Venda ou Aluguel)
   app.post<{ Body: { url: string } }>('/imoveis/importar', async (request, reply) => {
     const { url } = request.body || {};
 
@@ -45,7 +45,6 @@ export function buildServer(): FastifyInstance {
       const result = await importarImovelPorUrl(url);
 
       if (!result.success) {
-        // Erro de negócio/scraping estruturado (não 500)
         return reply.status(422).send(result);
       }
 
@@ -61,32 +60,71 @@ export function buildServer(): FastifyInstance {
     }
   });
 
-  // Listar imóveis cadastrados
-  app.get('/imoveis', async () => {
-    const result = await db.execute(sql`
-      SELECT
-        id,
-        url_origem,
-        titulo,
-        preco,
-        area_util,
-        preco_m2,
-        endereco,
-        bairro,
-        posicao_solar,
-        comentario_ia,
-        confianca_extracao,
-        imagens,
-        ST_X(geom) as longitude,
-        ST_Y(geom) as latitude,
-        criado_em,
-        atualizado_em
-      FROM imoveis
-      ORDER BY criado_em DESC;
-    `);
+  // Listar imóveis com suporte a filtro opcional por tipo (?tipo=venda ou ?tipo=aluguel)
+  app.get<{ Querystring: { tipo?: string } }>('/imoveis', async (request) => {
+    const tipo = request.query.tipo?.toLowerCase();
+
+    let query;
+    if (tipo === 'venda' || tipo === 'aluguel') {
+      query = sql`
+        SELECT
+          id,
+          url_origem,
+          tipo_transacao,
+          titulo,
+          preco,
+          condominio,
+          iptu,
+          custo_total_mensal,
+          area_util,
+          preco_m2,
+          endereco,
+          bairro,
+          posicao_solar,
+          comentario_ia,
+          confianca_extracao,
+          imagens,
+          ST_X(geom) as longitude,
+          ST_Y(geom) as latitude,
+          criado_em,
+          atualizado_em
+        FROM imoveis
+        WHERE tipo_transacao = ${tipo}
+        ORDER BY criado_em DESC;
+      `;
+    } else {
+      query = sql`
+        SELECT
+          id,
+          url_origem,
+          tipo_transacao,
+          titulo,
+          preco,
+          condominio,
+          iptu,
+          custo_total_mensal,
+          area_util,
+          preco_m2,
+          endereco,
+          bairro,
+          posicao_solar,
+          comentario_ia,
+          confianca_extracao,
+          imagens,
+          ST_X(geom) as longitude,
+          ST_Y(geom) as latitude,
+          criado_em,
+          atualizado_em
+        FROM imoveis
+        ORDER BY criado_em DESC;
+      `;
+    }
+
+    const result = await db.execute(query);
 
     return {
       total: result.rows.length,
+      filtro_tipo: tipo || 'todos',
       imoveis: result.rows,
     };
   });
@@ -102,8 +140,12 @@ export function buildServer(): FastifyInstance {
       SELECT
         id,
         url_origem,
+        tipo_transacao,
         titulo,
         preco,
+        condominio,
+        iptu,
+        custo_total_mensal,
         area_util,
         preco_m2,
         endereco,
@@ -125,7 +167,7 @@ export function buildServer(): FastifyInstance {
     }
 
     const historicoResult = await db.execute(sql`
-      SELECT id, preco, capturado_em
+      SELECT id, tipo_transacao, preco, condominio, iptu, custo_total_mensal, capturado_em
       FROM imoveis_historico_preco
       WHERE imovel_id = ${id}
       ORDER BY capturado_em ASC;

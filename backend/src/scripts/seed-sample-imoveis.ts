@@ -4,8 +4,11 @@ import { db, pool } from '../db/index.js';
 
 interface SampleImovel {
   urlOrigem: string;
+  tipoTransacao: 'venda' | 'aluguel';
   titulo: string;
   preco: number;
+  condominio: number;
+  iptu: number;
   areaUtil: number;
   endereco: string;
   bairro: string;
@@ -18,10 +21,14 @@ interface SampleImovel {
 }
 
 const SAMPLE_IMOVEIS: SampleImovel[] = [
+  // --- IMÓVEIS DE VENDA ---
   {
-    urlOrigem: 'https://imoveis-poa.com/anuncio/apto-bom-fim-fernandes-vieira-101',
+    urlOrigem: 'https://imoveis-poa.com/venda/apto-bom-fim-fernandes-vieira-101',
+    tipoTransacao: 'venda',
     titulo: 'Apartamento 2 Dormitórios Reformado no Bom Fim',
     preco: 480000.00,
+    condominio: 420.00,
+    iptu: 95.00,
     areaUtil: 65.00,
     endereco: 'Rua Fernandes Vieira, 350 - Bom Fim, Porto Alegre - RS',
     bairro: 'Bom Fim',
@@ -36,14 +43,17 @@ const SAMPLE_IMOVEIS: SampleImovel[] = [
     lng: -51.2120,
   },
   {
-    urlOrigem: 'https://imoveis-poa.com/anuncio/apto-moinhos-de-vento-padre-chagas-202',
+    urlOrigem: 'https://imoveis-poa.com/venda/apto-moinhos-padre-chagas-202',
+    tipoTransacao: 'venda',
     titulo: 'Apartamento 3 Dormitórios com Suíte e Vaga em Moinhos de Vento',
     preco: 980000.00,
+    condominio: 980.00,
+    iptu: 230.00,
     areaUtil: 112.00,
     endereco: 'Rua Padre Chagas, 210 - Moinhos de Vento, Porto Alegre - RS',
     bairro: 'Moinhos de Vento',
     posicaoSolar: 'Norte',
-    comentarioIa: 'Imóvel amplo com orientação solar Norte privilegiada, próximo ao Parcão e ao polo gastronômico. Valor de condomínio compatível.',
+    comentarioIa: 'Imóvel amplo com orientação solar Norte privilegiada, próximo ao Parcão e ao polo gastronômico.',
     confiancaExtracao: 'alta',
     imagens: [
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80',
@@ -53,9 +63,12 @@ const SAMPLE_IMOVEIS: SampleImovel[] = [
     lng: -51.2005,
   },
   {
-    urlOrigem: 'https://imoveis-poa.com/anuncio/apto-petropolis-dario-pederneiras-303',
+    urlOrigem: 'https://imoveis-poa.com/venda/apto-petropolis-dario-pederneiras-303',
+    tipoTransacao: 'venda',
     titulo: 'Apartamento 2 Dormitórios Próximo à Praça da Encol',
     preco: 630000.00,
+    condominio: 550.00,
+    iptu: 120.00,
     areaUtil: 78.00,
     endereco: 'Rua Dario Pederneiras, 450 - Petrópolis, Porto Alegre - RS',
     bairro: 'Petrópolis',
@@ -63,32 +76,18 @@ const SAMPLE_IMOVEIS: SampleImovel[] = [
     comentarioIa: 'Ótima planta no bairro Petrópolis, living 2 ambientes integrado à cozinha americana. Região tranquila e arborizada.',
     confiancaExtracao: 'alta',
     imagens: [
-      'https://images.unsplash.com/photo-1502005229762-ee1b2da97034?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1502005229762-ee1b2da97034?auto=format&fit=crop&w=800&q=80'
     ],
     lat: -30.0385,
     lng: -51.1880,
   },
   {
-    urlOrigem: 'https://imoveis-poa.com/anuncio/apto-menino-deus-getulio-vargas-404',
-    titulo: 'Apartamento 2 Dormitórios com Sacada no Menino Deus',
-    preco: 420000.00,
-    areaUtil: 60.00,
-    endereco: 'Avenida Getúlio Vargas, 780 - Menino Deus, Porto Alegre - RS',
-    bairro: 'Menino Deus',
-    posicaoSolar: 'Oeste',
-    comentarioIa: 'Localizado no Menino Deus próximo a supermercados e farmácias. Sol poente e ótima ventilação cruzada.',
-    confiancaExtracao: 'alta',
-    imagens: [
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80'
-    ],
-    lat: -30.0520,
-    lng: -51.2220,
-  },
-  {
-    urlOrigem: 'https://imoveis-poa.com/anuncio/apto-cidade-baixa-lima-e-silva-505',
+    urlOrigem: 'https://imoveis-poa.com/venda/apto-cidade-baixa-lima-e-silva-505',
+    tipoTransacao: 'venda',
     titulo: 'Studio Moderno Mobiliado na Cidade Baixa',
     preco: 310000.00,
+    condominio: 320.00,
+    iptu: 65.00,
     areaUtil: 42.00,
     endereco: 'Rua General Lima e Silva, 520 - Cidade Baixa, Porto Alegre - RS',
     bairro: 'Cidade Baixa',
@@ -101,38 +100,108 @@ const SAMPLE_IMOVEIS: SampleImovel[] = [
     lat: -30.0400,
     lng: -51.2220,
   },
+
+  // --- IMÓVEIS DE ALUGUEL ---
   {
-    urlOrigem: 'https://imoveis-poa.com/anuncio/apto-floresta-cristovao-colombo-606',
-    titulo: 'Apartamento 2 Dormitórios no Floresta Próximo ao Shopping Total',
-    preco: 350000.00,
-    areaUtil: 56.00,
-    endereco: 'Avenida Cristóvão Colombo, 900 - Floresta, Porto Alegre - RS',
-    bairro: 'Floresta',
-    posicaoSolar: 'Sul',
-    comentarioIa: 'Excelente acesso à saída de Porto Alegre e zona central. Prédio com baixo custo condominial.',
+    urlOrigem: 'https://imoveis-poa.com/aluguel/apto-bom-fim-vasco-da-gama-601',
+    tipoTransacao: 'aluguel',
+    titulo: 'Aluguel: Apartamento 2 Dormitórios no Bom Fim',
+    preco: 2400.00,
+    condominio: 450.00,
+    iptu: 90.00,
+    areaUtil: 60.00,
+    endereco: 'Rua Vasco da Gama, 420 - Bom Fim, Porto Alegre - RS',
+    bairro: 'Bom Fim',
+    posicaoSolar: 'Leste',
+    comentarioIa: 'Apartamento aconchegante para alugar a poucos passos da Redenção e do Zaffari. Prédio com elevador e interfone.',
+    confiancaExtracao: 'alta',
+    imagens: [
+      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80'
+    ],
+    lat: -30.0340,
+    lng: -51.2090,
+  },
+  {
+    urlOrigem: 'https://imoveis-poa.com/aluguel/apto-moinhos-dinarte-ribeiro-702',
+    tipoTransacao: 'aluguel',
+    titulo: 'Aluguel: 3 Dormitórios com Suíte e Garagem em Moinhos de Vento',
+    preco: 4200.00,
+    condominio: 950.00,
+    iptu: 210.00,
+    areaUtil: 95.00,
+    endereco: 'Rua Dinarte Ribeiro, 180 - Moinhos de Vento, Porto Alegre - RS',
+    bairro: 'Moinhos de Vento',
+    posicaoSolar: 'Norte',
+    comentarioIa: 'Apartamento de alto padrão para locação em rua nobre de Moinhos. Living com piso em tabuão e sol da manhã.',
     confiancaExtracao: 'alta',
     imagens: [
       'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80'
     ],
-    lat: -30.0220,
-    lng: -51.2100,
-  }
+    lat: -30.0245,
+    lng: -51.2020,
+  },
+  {
+    urlOrigem: 'https://imoveis-poa.com/aluguel/apto-menino-deus-getulio-803',
+    tipoTransacao: 'aluguel',
+    titulo: 'Aluguel: Apartamento 2 Dormitórios com Sacada no Menino Deus',
+    preco: 2100.00,
+    condominio: 380.00,
+    iptu: 75.00,
+    areaUtil: 55.00,
+    endereco: 'Avenida Getúlio Vargas, 650 - Menino Deus, Porto Alegre - RS',
+    bairro: 'Menino Deus',
+    posicaoSolar: 'Oeste',
+    comentarioIa: 'Excelente custo-benefício de locação, próximo ao Shopping Praia de Belas e hospitais. Ponto de ônibus na porta.',
+    confiancaExtracao: 'alta',
+    imagens: [
+      'https://images.unsplash.com/photo-1502005229762-ee1b2da97034?auto=format&fit=crop&w=800&q=80'
+    ],
+    lat: -30.0510,
+    lng: -51.2210,
+  },
+  {
+    urlOrigem: 'https://imoveis-poa.com/aluguel/apto-petropolis-felipe-de-oliveira-904',
+    tipoTransacao: 'aluguel',
+    titulo: 'Aluguel: Apartamento 2 Dormitórios Semi-Mobiliado em Petrópolis',
+    preco: 3100.00,
+    condominio: 620.00,
+    iptu: 130.00,
+    areaUtil: 75.00,
+    endereco: 'Rua Felipe de Oliveira, 890 - Petrópolis, Porto Alegre - RS',
+    bairro: 'Petrópolis',
+    posicaoSolar: 'Norte',
+    comentarioIa: 'Imóvel semi-mobiliado com armários embutidos na cozinha e dormitórios. Local calmo e seguro a 5 minutos da Encol.',
+    confiancaExtracao: 'alta',
+    imagens: [
+      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80'
+    ],
+    lat: -30.0390,
+    lng: -51.1890,
+  },
 ];
 
 async function main() {
-  console.log('=== POPULANDO BASE COM IMÓVEIS REAIS DE PORTO ALEGRE ===\n');
+  console.log('=== POPULANDO BASE COM IMÓVEIS (VENDA E ALUGUEL) ===\n');
 
-  // Limpar dados anteriores de teste
-  await db.execute(sql`DELETE FROM imoveis WHERE id = 3 OR url_origem LIKE '%raw.githubusercontent%';`);
+  // Limpar dados anteriores
+  await db.execute(sql`DELETE FROM imoveis;`);
 
   for (const item of SAMPLE_IMOVEIS) {
     const precoM2 = Number((item.preco / item.areaUtil).toFixed(2));
+    const custoTotalMensal =
+      item.tipoTransacao === 'aluguel'
+        ? Number((item.preco + item.condominio + item.iptu).toFixed(2))
+        : null;
 
     const res = await db.execute(sql`
       INSERT INTO imoveis (
         url_origem,
+        tipo_transacao,
         titulo,
         preco,
+        condominio,
+        iptu,
+        custo_total_mensal,
         area_util,
         preco_m2,
         endereco,
@@ -144,8 +213,12 @@ async function main() {
         geom
       ) VALUES (
         ${item.urlOrigem},
+        ${item.tipoTransacao},
         ${item.titulo},
         ${item.preco},
+        ${item.condominio},
+        ${item.iptu},
+        ${custoTotalMensal},
         ${item.areaUtil},
         ${precoM2},
         ${item.endereco},
@@ -156,26 +229,55 @@ async function main() {
         ${JSON.stringify(item.imagens)}::jsonb,
         ST_SetSRID(ST_MakePoint(${item.lng}, ${item.lat}), 4326)
       )
-      ON CONFLICT (url_origem) DO UPDATE SET
-        preco = EXCLUDED.preco,
-        preco_m2 = EXCLUDED.preco_m2,
-        atualizado_em = NOW()
-      RETURNING id, titulo, preco, area_util, preco_m2, bairro, posicao_solar;
+      RETURNING id, tipo_transacao, titulo, preco, condominio, iptu, custo_total_mensal, preco_m2, bairro;
     `);
 
-    const row = res.rows[0] as { id: number; titulo: string; preco: string; preco_m2: string; bairro: string };
-    console.log(`- Imóvel #${row.id}: ${row.titulo} (${row.bairro}) - R$ ${row.preco} (R$ ${row.preco_m2}/m²)`);
+    const row = res.rows[0] as {
+      id: number;
+      tipo_transacao: string;
+      titulo: string;
+      preco: string;
+      condominio: string;
+      iptu: string;
+      custo_total_mensal: string | null;
+      preco_m2: string;
+      bairro: string;
+    };
 
-    // Inserir histórico de preço
+    if (row.tipo_transacao === 'venda') {
+      console.log(`- [VENDA]   #${row.id}: ${row.titulo} (${row.bairro}) -> R$ ${row.preco} (R$ ${row.preco_m2}/m²)`);
+    } else {
+      console.log(`- [ALUGUEL] #${row.id}: ${row.titulo} (${row.bairro}) -> Aluguel R$ ${row.preco} | Cond: R$ ${row.condominio} | Total: R$ ${row.custo_total_mensal}/mês`);
+    }
+
+    // Inserir histórico inicial
     await db.execute(sql`
-      INSERT INTO imoveis_historico_preco (imovel_id, preco)
-      VALUES (${row.id}, ${item.preco})
-      ON CONFLICT DO NOTHING;
+      INSERT INTO imoveis_historico_preco (
+        imovel_id,
+        tipo_transacao,
+        preco,
+        condominio,
+        iptu,
+        custo_total_mensal
+      ) VALUES (
+        ${row.id},
+        ${item.tipoTransacao},
+        ${item.preco},
+        ${item.condominio},
+        ${item.iptu},
+        ${custoTotalMensal}
+      );
     `);
   }
 
-  const total = await db.execute(sql`SELECT count(*)::integer as count FROM imoveis;`);
-  console.log(`\nBase populada com sucesso! Total de imóveis cadastrados: ${(total.rows[0] as { count: number }).count}`);
+  const totais = await db.execute(sql`
+    SELECT tipo_transacao, count(*)::integer as total
+    FROM imoveis
+    GROUP BY tipo_transacao;
+  `);
+
+  console.log('\nDistribuição atual de imóveis:');
+  console.table(totais.rows);
 
   await pool.end();
   process.exit(0);
