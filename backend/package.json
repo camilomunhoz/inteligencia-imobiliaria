@@ -12,7 +12,8 @@
     "db:migrate": "tsx src/db/migrate.ts",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "test:db": "tsx src/db/test-connection.ts"
+    "test:db": "tsx src/db/test-connection.ts",
+    "test:fase1": "tsx src/db/test-fase1.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
