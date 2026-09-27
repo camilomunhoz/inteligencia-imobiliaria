@@ -3,6 +3,12 @@ import cors from '@fastify/cors';
 import { sql } from 'drizzle-orm';
 import { db } from './db/index.js';
 import { importarImovelPorUrl } from './services/imoveis.js';
+import {
+  fetchImoveisMetrics,
+  getScoreWeights,
+  scoreImoveisPartitioned,
+  getImovelScoreById,
+} from './services/scoring.js';
 
 export function buildServer(): FastifyInstance {
   const app = Fastify({
@@ -60,76 +66,104 @@ export function buildServer(): FastifyInstance {
     }
   });
 
-  // Listar imóveis com suporte a filtro opcional por tipo (?tipo=venda ou ?tipo=aluguel)
+  // Listar imóveis já com scoring calculado e particionado por tipo de transação
   app.get<{ Querystring: { tipo?: string } }>('/imoveis', async (request) => {
-    const tipo = request.query.tipo?.toLowerCase();
+    const tipo = request.query.tipo?.toLowerCase() as 'venda' | 'aluguel' | undefined;
 
-    let query;
-    if (tipo === 'venda' || tipo === 'aluguel') {
-      query = sql`
-        SELECT
-          id,
-          url_origem,
-          tipo_transacao,
-          titulo,
-          preco,
-          condominio,
-          iptu,
-          custo_total_mensal,
-          area_util,
-          preco_m2,
-          endereco,
-          bairro,
-          posicao_solar,
-          comentario_ia,
-          confianca_extracao,
-          imagens,
-          ST_X(geom) as longitude,
-          ST_Y(geom) as latitude,
-          criado_em,
-          atualizado_em
-        FROM imoveis
-        WHERE tipo_transacao = ${tipo}
-        ORDER BY criado_em DESC;
-      `;
-    } else {
-      query = sql`
-        SELECT
-          id,
-          url_origem,
-          tipo_transacao,
-          titulo,
-          preco,
-          condominio,
-          iptu,
-          custo_total_mensal,
-          area_util,
-          preco_m2,
-          endereco,
-          bairro,
-          posicao_solar,
-          comentario_ia,
-          confianca_extracao,
-          imagens,
-          ST_X(geom) as longitude,
-          ST_Y(geom) as latitude,
-          criado_em,
-          atualizado_em
-        FROM imoveis
-        ORDER BY criado_em DESC;
-      `;
+    // 1. Obter métricas espaciais e brutas dos imóveis
+    const rawMetrics = await fetchImoveisMetrics(tipo === 'venda' || tipo === 'aluguel' ? tipo : undefined);
+
+    // 2. Obter pesos de Venda e Aluguel
+    const weightsVenda = await getScoreWeights('venda');
+    const weightsAluguel = await getScoreWeights('aluguel');
+
+    // 3. Executar scoring particionado
+    const scoredList = scoreImoveisPartitioned(rawMetrics, weightsVenda, weightsAluguel);
+
+    // 4. Buscar metadados adicionais (imagens, url, criado_em, etc.)
+    const metaRes = await db.execute(sql`
+      SELECT
+        id,
+        url_origem,
+        endereco,
+        comentario_ia,
+        confianca_extracao,
+        imagens,
+        ST_X(geom) as longitude,
+        ST_Y(geom) as latitude,
+        criado_em,
+        atualizado_em
+      FROM imoveis;
+    `);
+
+    const metaMap = new Map<number, Record<string, unknown>>();
+    for (const m of metaRes.rows) {
+      metaMap.set(Number((m as { id: number }).id), m as Record<string, unknown>);
     }
 
-    const result = await db.execute(query);
+    // 5. Mesclar e ordenar por score final decrescente
+    const fullImoveis = scoredList
+      .map((item) => {
+        const meta = metaMap.get(item.id) || {};
+        return {
+          ...item,
+          ...meta,
+        };
+      })
+      .sort((a, b) => b.scoreFinal - a.scoreFinal);
 
     return {
-      total: result.rows.length,
+      total: fullImoveis.length,
       filtro_tipo: tipo || 'todos',
-      imoveis: result.rows,
+      pesos_utilizados: {
+        venda: weightsVenda,
+        aluguel: weightsAluguel,
+      },
+      imoveis: fullImoveis,
     };
   });
 
-  // Detalhes do imóvel com série temporal de preços
+  // Score individual detalhado de um imóvel
+  app.get<{ Params: { id: string } }>('/imoveis/:id/score', async (request, reply) => {
+    const id = parseInt(request.params.id, 10);
+    if (isNaN(id)) {
+      return reply.status(400).send({ error: 'ID inválido.' });
+    }
+
+    const scored = await getImovelScoreById(id);
+    if (!scored) {
+      return reply.status(404).send({ error: 'Imóvel não encontrado.' });
+    }
+
+    const weights = await getScoreWeights(scored.tipoTransacao);
+
+    return {
+      imovel_id: scored.id,
+      titulo: scored.titulo,
+      tipo_transacao: scored.tipoTransacao,
+      score_final: scored.scoreFinal,
+      sub_scores: scored.subScores,
+      metricas_brutas: {
+        preco: scored.preco,
+        condominio: scored.condominio,
+        iptu: scored.iptu,
+        custo_total_mensal: scored.custoTotalMensal,
+        area_util: scored.areaUtil,
+        preco_m2: scored.precoM2,
+        posicao_solar: scored.posicaoSolar,
+        distancia_redencao_m: scored.distanciaRedencao,
+        distancia_parcao_m: scored.distanciaParcao,
+        distancia_saida_poa_m: scored.distanciaSaidaPoa,
+        total_comercio_1km: scored.comercio1km,
+        farmacias_1km: scored.farmacias1km,
+        supermercados_1km: scored.supermercados1km,
+        padarias_1km: scored.padarias1km,
+      },
+      pesos_aplicados: weights,
+    };
+  });
+
+  // Detalhes do imóvel com histórico de preços
   app.get<{ Params: { id: string } }>('/imoveis/:id', async (request, reply) => {
     const id = parseInt(request.params.id, 10);
     if (isNaN(id)) {
@@ -176,6 +210,14 @@ export function buildServer(): FastifyInstance {
     return {
       imovel: imovelResult.rows[0],
       historico_precos: historicoResult.rows,
+    };
+  });
+
+  // Pesos de configuração atuais
+  app.get('/pesos', async () => {
+    const res = await db.execute(sql`SELECT * FROM pesos_configuracao ORDER BY id ASC;`);
+    return {
+      perfis: res.rows,
     };
   });
 

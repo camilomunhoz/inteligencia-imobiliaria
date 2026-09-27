@@ -15,6 +15,7 @@
     "test:db": "tsx src/db/test-connection.ts",
     "test:fase1": "tsx src/db/test-fase1.ts",
     "test:fase3": "tsx src/scripts/test-fase3.ts",
+    "test:fase4": "tsx src/scripts/test-fase4.ts",
     "seed:pois": "tsx src/scripts/seed-pois.ts",
     "seed:imoveis": "tsx src/scripts/seed-sample-imoveis.ts",
     "pois:import": "tsx src/scripts/import-pois.ts",
