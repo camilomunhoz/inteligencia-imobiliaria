@@ -1,0 +1,30 @@
+{
+  "name": "inteligencia-imobiliaria-backend",
+  "version": "1.0.0",
+  "description": "Backend para plataforma de analise e scoring de imoveis",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "test:db": "tsx src/db/test-connection.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.38.4",
+    "fastify": "^5.2.1",
+    "pg": "^8.13.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "@types/pg": "^8.11.11",
+    "drizzle-kit": "^0.30.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}
