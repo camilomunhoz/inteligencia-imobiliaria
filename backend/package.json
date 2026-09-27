@@ -14,19 +14,28 @@
     "db:studio": "drizzle-kit studio",
     "test:db": "tsx src/db/test-connection.ts",
     "test:fase1": "tsx src/db/test-fase1.ts",
+    "test:fase3": "tsx src/scripts/test-fase3.ts",
     "seed:pois": "tsx src/scripts/seed-pois.ts",
+    "seed:imoveis": "tsx src/scripts/seed-sample-imoveis.ts",
     "pois:import": "tsx src/scripts/import-pois.ts",
     "pois:status": "tsx src/scripts/status-pois.ts"
   },
   "dependencies": {
+    "@fastify/cors": "^11.3.0",
+    "@mozilla/readability": "^0.6.0",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.38.4",
     "fastify": "^5.2.1",
-    "pg": "^8.13.3"
+    "jsdom": "^29.1.1",
+    "pg": "^8.13.3",
+    "playwright": "^1.63.0",
+    "turndown": "^7.2.4"
   },
   "devDependencies": {
+    "@types/jsdom": "^30.0.0",
     "@types/node": "^22.13.9",
     "@types/pg": "^8.11.11",
+    "@types/turndown": "^5.0.6",
     "drizzle-kit": "^0.30.2",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
