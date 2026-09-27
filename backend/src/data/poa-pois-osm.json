@@ -1,0 +1,4574 @@
+[
+  {
+    "type": "node",
+    "id": 442752778,
+    "lat": -30.0287749,
+    "lon": -51.2087253,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "drive_through": "no",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 598724534,
+    "lat": -30.0396772,
+    "lon": -51.12465,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "8711",
+      "addr:postcode": "91260-000",
+      "addr:street": "Avenida Protásio Alves",
+      "addr:suburb": "Morro Santana",
+      "amenity": "pharmacy",
+      "dispensing": "no",
+      "healthcare": "pharmacy",
+      "name": "Agafarma",
+      "phone": "+55 51 3386-1737",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 598724543,
+    "lat": -30.0399572,
+    "lon": -51.1258896,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "no",
+      "name": "FarMais",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 598724556,
+    "lat": -30.040066,
+    "lon": -51.1263298,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "8565",
+      "addr:postcode": "90410-004",
+      "addr:street": "Avenida Protásio Alves",
+      "addr:suburb": "Morro Santana",
+      "amenity": "pharmacy",
+      "dispensing": "no",
+      "name": "CompreBem",
+      "phone": "+55 51 3387-1655",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 606189116,
+    "lat": -30.0447715,
+    "lon": -51.1975225,
+    "tags": {
+      "amenity": "pharmacy",
+      "branch": "Zaffari Ipiranga",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "no",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "Mo-Su,PH 07:30-23:00; Su,PH off",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 606189341,
+    "lat": -30.0437287,
+    "lon": -51.2022464,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "no",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 747463971,
+    "lat": -30.0441728,
+    "lon": -51.2297549,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácia Forum"
+    }
+  },
+  {
+    "type": "node",
+    "id": 853556541,
+    "lat": -30.0309994,
+    "lon": -51.2324354,
+    "tags": {
+      "addr:street": "Rua dos Andradas",
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 853556633,
+    "lat": -30.0316022,
+    "lon": -51.2342804,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 853556677,
+    "lat": -30.030839,
+    "lon": -51.2328129,
+    "tags": {
+      "addr:street": "Rua dos Andradas",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmacias Associadas"
+    }
+  },
+  {
+    "type": "node",
+    "id": 853556680,
+    "lat": -30.0315341,
+    "lon": -51.2346791,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Drogabel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 853664499,
+    "lat": -30.0300319,
+    "lon": -51.2296958,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Droga Raia",
+      "brand:wikidata": "Q10357101",
+      "brand:wikipedia": "pt:RaiaDrogasil",
+      "healthcare": "pharmacy",
+      "name": "Droga Raia"
+    }
+  },
+  {
+    "type": "node",
+    "id": 853664848,
+    "lat": -30.0298363,
+    "lon": -51.2296625,
+    "tags": {
+      "addr:housenumber": "1238",
+      "addr:street": "Rua dos Andradas",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "contact:phone": "+55 51 3224-8466",
+      "contact:website": "https://www.panvel.com/",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "ref:vatin": "BR92665611004245;BRRS0960187790"
+    }
+  },
+  {
+    "type": "node",
+    "id": 853665190,
+    "lat": -30.0298341,
+    "lon": -51.2294273,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "PrecoPopular"
+    }
+  },
+  {
+    "type": "node",
+    "id": 853665238,
+    "lat": -30.0296576,
+    "lon": -51.2276907,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 857182866,
+    "lat": -30.0281449,
+    "lon": -51.2294988,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Capilé"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1139972320,
+    "lat": -30.028462,
+    "lon": -51.1699793,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1149306135,
+    "lat": -30.0271232,
+    "lon": -51.1815134,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Magistrallis Farmácia de Manipulação"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1243941777,
+    "lat": -30.0381756,
+    "lon": -51.2213889,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel Express"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1250718420,
+    "lat": -30.0262001,
+    "lon": -51.2156839,
+    "tags": {
+      "amenity": "pharmacy",
+      "branch": "Garibaldi",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1398057020,
+    "lat": -30.041938,
+    "lon": -51.2078537,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "no",
+      "fax": "+55 51 3308-5726",
+      "healthcare": "pharmacy",
+      "name": "Farmácia Popular do Brasil",
+      "opening_hours": "Mo-Fr 08:00-18:00; Sa 08:00-12:00",
+      "phone": "+55 51 3308-5728"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1398746510,
+    "lat": -30.0272691,
+    "lon": -51.1897886,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmais"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1398746511,
+    "lat": -30.0274395,
+    "lon": -51.1898702,
+    "tags": {
+      "addr:street": "Rua Anita Garibaldi",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1711730501,
+    "lat": -30.0101861,
+    "lon": -51.1351368,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1732955410,
+    "lat": -30.0115801,
+    "lon": -51.2057634,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Medex"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1786938802,
+    "lat": -30.0270548,
+    "lon": -51.1895289,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2083053508,
+    "lat": -30.043527,
+    "lon": -51.1826662,
+    "tags": {
+      "addr:street": "Avenida Protásio Alves",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2136838231,
+    "lat": -30.029735,
+    "lon": -51.2010722,
+    "tags": {
+      "addr:housenumber": "20",
+      "addr:street": "Avenida Goethe",
+      "addr:unit": "101",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "phone": "+55 51 3332-1582",
+      "website": "https://www.panvel.com/",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2193048876,
+    "lat": -30.0307147,
+    "lon": -51.2316015,
+    "tags": {
+      "addr:housenumber": "985",
+      "addr:postcode": "90020-005",
+      "addr:street": "Rua dos Andradas",
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "contact:website": "http://www.saojoaofarmacias.com.br/",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "São João",
+      "phone": "+55 51 3224-2849"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2280097344,
+    "lat": -30.1038609,
+    "lon": -51.2535468,
+    "tags": {
+      "addr:housename": "Loja 3",
+      "addr:housenumber": "838",
+      "addr:postcode": "91900-050",
+      "addr:street": "Avenida Copacabana",
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "name": "Verbena Manipulação",
+      "opening_hours": "Mo-Fr 09:00-19:00; Sa 09:00-12:00",
+      "phone": "+55 51 3346-3346",
+      "start_date": "2012",
+      "website": "http://verbenamanipulac.web116.f1.k8.com.br"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2382470417,
+    "lat": -30.0492425,
+    "lon": -51.2218467,
+    "tags": {
+      "addr:housenumber": "541",
+      "addr:street": "Avenida Getúlio Vargas",
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Empório Farmacêutico",
+      "opening_hours": "Mo-Sa 08:00-23:00",
+      "phone": "+55 51 3029-1512",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2427461508,
+    "lat": -30.0601135,
+    "lon": -51.2230993,
+    "tags": {
+      "amenity": "pharmacy",
+      "branch": "Farmácias",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2430384044,
+    "lat": -30.0586394,
+    "lon": -51.2294428,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2430384045,
+    "lat": -30.0602123,
+    "lon": -51.2277109,
+    "tags": {
+      "amenity": "pharmacy",
+      "branch": "24h",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "24/7"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2430384046,
+    "lat": -30.058287,
+    "lon": -51.2230857,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácia de manipulação Quíron",
+      "website": "https://www.farmaciaquiron.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2430384047,
+    "lat": -30.0545166,
+    "lon": -51.2225279,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Bulla Manipulação"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2430384048,
+    "lat": -30.0551456,
+    "lon": -51.2226775,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Agafarma",
+      "brand:wikidata": "Q93735939",
+      "healthcare": "pharmacy",
+      "name": "Agafarma",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2430384049,
+    "lat": -30.0522206,
+    "lon": -51.221973,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Agafarma",
+      "brand:wikidata": "Q93735939",
+      "healthcare": "pharmacy",
+      "name": "Agafarma"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2430384050,
+    "lat": -30.0530896,
+    "lon": -51.2224106,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmais"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2430384051,
+    "lat": -30.0513232,
+    "lon": -51.2229187,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2432738266,
+    "lat": -30.0101732,
+    "lon": -51.1562476,
+    "tags": {
+      "addr:housename": "Drobel",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2435818301,
+    "lat": -30.0112035,
+    "lon": -51.1603902,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2506179598,
+    "lat": -30.0254637,
+    "lon": -51.1830357,
+    "tags": {
+      "addr:street": "Avenida Carlos Gomes",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Maxxi Econômica Farmácia"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2597547217,
+    "lat": -30.0304516,
+    "lon": -51.2017848,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmais"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2645405178,
+    "lat": -30.0264381,
+    "lon": -51.2224498,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2697121784,
+    "lat": -30.0425225,
+    "lon": -51.1910201,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Agafarma",
+      "brand:wikidata": "Q93735939",
+      "dispensing": "no",
+      "healthcare": "pharmacy",
+      "name": "Agafarma"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2697121800,
+    "lat": -30.0547907,
+    "lon": -51.1471249,
+    "tags": {
+      "addr:street": "Avenida Antônio de Carvalho",
+      "amenity": "pharmacy",
+      "brand": "Drogasil",
+      "brand:wikidata": "Q5308185",
+      "brand:wikipedia": "pt:Drogasil",
+      "dispensing": "no",
+      "healthcare": "pharmacy",
+      "name": "Drogasil",
+      "note": "O estabelecimento faz parte de um conjunto comercial com rampa para cadeirantes, tem acesso a todas as lojas. As calçadas no entorno que estão muito ruins, semáforo com rampa a poucos metro do local.",
+      "shop": "gas",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2697121816,
+    "lat": -30.0389658,
+    "lon": -51.2011028,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "no",
+      "healthcare": "pharmacy",
+      "name": "Sanar Farma"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2697121828,
+    "lat": -30.0494119,
+    "lon": -51.1444611,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "no",
+      "healthcare": "pharmacy",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2884349759,
+    "lat": -30.0202516,
+    "lon": -51.1812104,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2884499565,
+    "lat": -30.0588813,
+    "lon": -51.176038,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "operator": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2885350384,
+    "lat": -29.9947577,
+    "lon": -51.1296959,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Agafarma",
+      "brand:wikidata": "Q93735939",
+      "healthcare": "pharmacy",
+      "name": "Agafarma"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2885350386,
+    "lat": -29.9949273,
+    "lon": -51.1298283,
+    "tags": {
+      "addr:street": "Avenida Assis Brasil",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Associadas"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2885350387,
+    "lat": -29.9945951,
+    "lon": -51.1295535,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Maxxi Econômica"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2994579943,
+    "lat": -30.0589631,
+    "lon": -51.193368,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "no",
+      "healthcare": "pharmacy",
+      "name": "Farmácia Agafarma"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2994579944,
+    "lat": -30.0632757,
+    "lon": -51.1861828,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "no",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3028960512,
+    "lat": -30.0447382,
+    "lon": -51.2236798,
+    "tags": {
+      "addr:housenumber": "531",
+      "addr:street": "Rua Barão do Gravatai",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3108273686,
+    "lat": -30.0357903,
+    "lon": -51.2374449,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3108273692,
+    "lat": -30.0348398,
+    "lon": -51.2282285,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3349089179,
+    "lat": -30.0351574,
+    "lon": -51.2299376,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3733833047,
+    "lat": -30.0801031,
+    "lon": -51.2098786,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "3037",
+      "addr:postcode": "90870-001",
+      "addr:street": "Avenida Teresópolis",
+      "addr:suburb": "Teresópolis",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácia de Manipulação Extra Fórmula",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3733884609,
+    "lat": -30.0426904,
+    "lon": -51.1356226,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "7525",
+      "addr:postcode": "91310-003",
+      "addr:street": "Avenida Protásio Alves",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Chapuis Móveis e Ambientes",
+      "note": "Degraus na entrada.",
+      "operator": "Chapuis Móveis e Ambientes",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3733951396,
+    "lat": -30.0997293,
+    "lon": -51.2315898,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "2593",
+      "addr:postcode": "91740-001",
+      "addr:street": "Avenida da Cavalhada",
+      "addr:suburb": "Cavalhada",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácia Agafarma",
+      "opening_hours": "08:00-23:00",
+      "operator": "Rede Agafarma",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3733951397,
+    "lat": -30.0989236,
+    "lon": -51.2317064,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "2493",
+      "addr:postcode": "91740-000",
+      "addr:street": "Avenida da Cavalhada",
+      "addr:suburb": "Cavalhada",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Medicom",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3733951398,
+    "lat": -30.0988279,
+    "lon": -51.2317262,
+    "tags": {
+      "addr:postcode": "91740-000",
+      "addr:street": "Avenida da Cavalhada",
+      "addr:suburb": "Cavalhada",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Mais Econômica",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3738413588,
+    "lat": -30.0106097,
+    "lon": -51.1566288,
+    "tags": {
+      "addr:street": "Avenida Assis Brasil",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Famácia Popular",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3739450215,
+    "lat": -30.0607201,
+    "lon": -51.1912752,
+    "tags": {
+      "amenity": "pharmacy",
+      "denomination": "baptist",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Farmácia Preço Popular",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3753196775,
+    "lat": -30.0387327,
+    "lon": -51.2210374,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "655",
+      "addr:postcode": "90050-101",
+      "addr:street": "Rua General Lima e Silva",
+      "addr:suburb": "Cidade Baixa",
+      "amenity": "pharmacy",
+      "brand": "Droga Raia",
+      "brand:wikidata": "Q10357101",
+      "healthcare": "pharmacy",
+      "name": "Droga Raia",
+      "opening_hours": "07:00-23:00",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3754891584,
+    "lat": -30.0921554,
+    "lon": -51.1311093,
+    "tags": {
+      "addr:street": "Estrada João de Oliveira Remião",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Associadas",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3779016157,
+    "lat": -30.022144,
+    "lon": -51.151351,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3798370386,
+    "lat": -30.0179637,
+    "lon": -51.2022207,
+    "tags": {
+      "addr:street": "Avenida Cristóvão Colombo",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Mais Econômica"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3798370388,
+    "lat": -30.017868,
+    "lon": -51.1998746,
+    "tags": {
+      "addr:street": "Avenida Cristóvão Colombo",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3798370389,
+    "lat": -30.0178742,
+    "lon": -51.2003307,
+    "tags": {
+      "addr:street": "Avenida Cristóvão Colombo",
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "healthcare": "pharmacy",
+      "name": "São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3798783552,
+    "lat": -30.0178509,
+    "lon": -51.1905789,
+    "tags": {
+      "addr:street": "Avenida Cristóvão Colombo",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3827293590,
+    "lat": -30.0422935,
+    "lon": -51.1791067,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Farmácia São João",
+      "brand:wikidata": "Q65164556",
+      "healthcare": "pharmacy",
+      "name": "Farmácia São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3975080689,
+    "lat": -30.0500826,
+    "lon": -51.1865528,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4134017479,
+    "lat": -30.0182497,
+    "lon": -51.1740443,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4227636653,
+    "lat": -30.0406506,
+    "lon": -51.1288742,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "8323",
+      "addr:postcode": "90410-004",
+      "addr:street": "Avenida Protásio Alves",
+      "addr:suburb": "Morro Santana",
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Farmácia PANVEL 24hs",
+      "opening_hours": "00:00 - 23:59",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4253379979,
+    "lat": -30.0502297,
+    "lon": -51.2132839,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4286919797,
+    "lat": -30.0100844,
+    "lon": -51.1544304,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4286920301,
+    "lat": -30.0086757,
+    "lon": -51.1443961,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4312048990,
+    "lat": -30.0368188,
+    "lon": -51.1864512,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4401893091,
+    "lat": -30.0555378,
+    "lon": -51.1469785,
+    "tags": {
+      "addr:housenumber": "1585",
+      "addr:street": "Av. Antônio de Carvalho",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Medsul Express"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4437056131,
+    "lat": -30.0591962,
+    "lon": -51.1459573,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4450687816,
+    "lat": -30.0403346,
+    "lon": -51.1641394,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "no",
+      "healthcare": "pharmacy",
+      "name": "Farmais Paineira",
+      "opening_hours": "Mo-Su 08:00-23:00",
+      "phone": "+55 51 3338-2320",
+      "website": "https://www.farmais.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4567065707,
+    "lat": -30.0315388,
+    "lon": -51.2246356,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "16",
+      "addr:postcode": "90020-130",
+      "addr:street": "Praça Conde de Porto Alegre",
+      "addr:suburb": "Centro Histórico",
+      "amenity": "pharmacy",
+      "drive_through": "yes",
+      "healthcare": "pharmacy",
+      "name": "Farmácia Ars Curandi",
+      "opening_hours": "Mo-Su 08:30-18:30; Sa 08:30-12:30"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4590243135,
+    "lat": -30.0403349,
+    "lon": -51.222853,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:postcode": "90050-002",
+      "addr:street": "Rua José do Patrocínio",
+      "addr:suburb": "Cidade Baixa",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Sanar Rede de Farmácias",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4597382721,
+    "lat": -30.0430869,
+    "lon": -51.1368201,
+    "tags": {
+      "addr:street": "Farmácia São João",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4613902690,
+    "lat": -30.0104625,
+    "lon": -51.1928306,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácia Super Econômica"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4732283871,
+    "lat": -30.0222513,
+    "lon": -51.1848606,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "drive_through": "no",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4781155159,
+    "lat": -30.0244617,
+    "lon": -51.2029311,
+    "tags": {
+      "addr:housenumber": "306",
+      "addr:street": "Rua Padre Chagas",
+      "addr:unit": "101",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "drive_through": "no",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "Mo-Sa 08:00-22:00; Su 10:00-19:00",
+      "phone": "+55 51 3311-6741",
+      "website": "https://www.panvel.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4783315437,
+    "lat": -30.0569671,
+    "lon": -51.2229341,
+    "tags": {
+      "addr:housenumber": "1371",
+      "addr:street": "Avenida Getúlio Vargas",
+      "amenity": "pharmacy",
+      "email": "atendimento@farmaciaquiron.com.br",
+      "healthcare": "pharmacy",
+      "name": "Farmácia Quíron Menino Deus",
+      "opening_hours": "Mo-Fr 08:00-19:30; Sa 09:00-15:00",
+      "phone": "+55 51 3030-3200",
+      "website": "https://www.farmaciaquiron.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4783315438,
+    "lat": -30.0575674,
+    "lon": -51.2226881,
+    "tags": {
+      "addr:housenumber": "1430",
+      "addr:postcode": "90150-004",
+      "addr:street": "Avenida Getúlio Vargas",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácias São João",
+      "opening_hours": "Mo-Sa 07:30-22:00; Su 09:00-20:00",
+      "phone": "+55 51 4061-3144",
+      "website": "http://www.saojoaofarmacias.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4784882797,
+    "lat": -30.0373024,
+    "lon": -51.2100624,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "1102",
+      "addr:postcode": "90040-192",
+      "addr:street": "Avenida Venâncio Aires",
+      "addr:suburb": "Santana",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "Mo-Sa 07:30-22:00; Su 10:00-20:00",
+      "phone": "+55 51 3388 8788; +55 51 99947 8136",
+      "website": "https://www.panvel.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4786518443,
+    "lat": -30.039197,
+    "lon": -51.2200735,
+    "tags": {
+      "addr:housenumber": "750",
+      "addr:street": "Rua General Lima e Silva",
+      "addr:unit": "1",
+      "amenity": "pharmacy",
+      "email": "atendimento@farmaciaquiron.com.br",
+      "healthcare": "pharmacy",
+      "name": "Farmácia Quíron Cidade Baixa",
+      "opening_hours": "Mo-Sa 09:00-21:00",
+      "phone": "+55 51 3030-3200",
+      "website": "https://www.farmaciaquiron.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4789239115,
+    "lat": -30.0269158,
+    "lon": -51.229561,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Drogabel",
+      "website": "https://www.drogabel.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4805948816,
+    "lat": -30.0250876,
+    "lon": -51.2033554,
+    "tags": {
+      "addr:housenumber": "306",
+      "addr:street": "Rua Padre Chagas",
+      "addr:unit": "101",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "Mo-Sa 08:00-22:00; Su 10:00-19:00",
+      "phone": "+55 51 3311-6741",
+      "website": "https://www.panvel.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4805948817,
+    "lat": -30.0365059,
+    "lon": -51.2090587,
+    "tags": {
+      "addr:housenumber": "1370",
+      "addr:postcode": "90035-191",
+      "addr:street": "Avenida Osvaldo Aranha",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "Mo-Sa 07:30-22:00; Su 08:30-20:00",
+      "phone": "+55 51 3346-1802;+55 51 3211-0651",
+      "website": "https://www.panvel.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4805948818,
+    "lat": -30.0407447,
+    "lon": -51.209709,
+    "tags": {
+      "addr:housenumber": "543",
+      "addr:street": "Avenida Jerônimo de Ornelas",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "phone": "+55 51 3223-0178",
+      "website": "https://www.panvel.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4880339936,
+    "lat": -30.0432128,
+    "lon": -51.219646,
+    "tags": {
+      "addr:housenumber": "7",
+      "addr:street": "Avenida Venâncio Aires",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Associadas",
+      "opening_hours": "08:00-21:00",
+      "phone": "+55 51 3012-6432",
+      "website": "https://www.farmaciasassociadas.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5020366900,
+    "lat": -30.0250399,
+    "lon": -51.2015222,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:street": "Rua 24 de Outubro",
+      "addr:suburb": "Moinhos de Vento",
+      "amenity": "pharmacy",
+      "brand": "Farmácia São João",
+      "brand:wikidata": "Q65164556",
+      "brand:wikipedia": "pt:Farmácias São João",
+      "drive_through": "no",
+      "healthcare": "pharmacy",
+      "name": "Farmácia São João",
+      "operator": "São João",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5043652182,
+    "lat": -30.0436882,
+    "lon": -51.187723,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5056007824,
+    "lat": -30.0305738,
+    "lon": -51.2234515,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácias São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5230884924,
+    "lat": -30.0223386,
+    "lon": -51.1540005,
+    "tags": {
+      "addr:housenumber": "285 sala3",
+      "addr:street": "Rua Engenheiro Walter Boehl",
+      "amenity": "pharmacy",
+      "full_name": "Ophtalmed Farmácia Oftalmológica",
+      "healthcare": "pharmacy",
+      "name": "Ophtalmed",
+      "opening_hours": "Mo-Sa 08:00-21:00; Su 10:00-21:00",
+      "phone": "+55 51 3340-3012"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5306733106,
+    "lat": -30.1133218,
+    "lon": -51.2553164,
+    "tags": {
+      "addr:housenumber": "2857",
+      "addr:street": "Avenida Wenceslau Escobar",
+      "addr:unit": "4",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "24/7",
+      "phone": "+55 51 3346-6144",
+      "website": "https://www.panvel.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5316639573,
+    "lat": -30.0973459,
+    "lon": -51.2313159,
+    "tags": {
+      "addr:housenumber": "2351",
+      "addr:street": "Avenida da Cavalhada",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "Su-Sa 07:30-23:00",
+      "phone": "+55 51 3247-1732",
+      "website": "https://www.panvel.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5354805030,
+    "lat": -30.0296743,
+    "lon": -51.2256542,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:street": "Rua Vigário José Inácio",
+      "addr:suburb": "Centro Histórico",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Maxxi Econômica"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5354812111,
+    "lat": -30.0297798,
+    "lon": -51.2248025,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:street": "Rua dos Andradas",
+      "addr:suburb": "Centro Histórico",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácias São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5405432268,
+    "lat": -29.98018,
+    "lon": -51.1903298,
+    "tags": {
+      "addr:housenumber": "125",
+      "addr:street": "Avenida Engenheiro Felício Lemieszek",
+      "amenity": "pharmacy",
+      "brand": "Agafarma",
+      "brand:wikidata": "Q93735939",
+      "healthcare": "pharmacy",
+      "name": "Agafarma",
+      "opening_hours": "Mo-Sa 08:00-21:30; Su 09:00-13:00,15:00-18:30",
+      "phone": "+55 51 3374-4926",
+      "website": "https://www.agafarma.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5593633556,
+    "lat": -30.0040338,
+    "lon": -51.1471055,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Associadas"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5625097014,
+    "lat": -30.0103237,
+    "lon": -51.1583269,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "2894",
+      "addr:street": "Avenida Assis Brasil",
+      "addr:suburb": "Cristo Redentor",
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Farmácia Cristo Redentor"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5625496796,
+    "lat": -30.0103479,
+    "lon": -51.1585522,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "2866",
+      "addr:street": "Avenida Assis Brasil",
+      "addr:suburb": "Cristo Redentor",
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "drive_through": "no",
+      "healthcare": "pharmacy",
+      "name": "Farmácia Popular Med"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5627838545,
+    "lat": -30.0410944,
+    "lon": -51.2159164,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "24/7",
+      "operator": "Panvel",
+      "phone": "+55 51 3226-4564"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5627838546,
+    "lat": -30.0415486,
+    "lon": -51.2163277,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Associadas"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5805255011,
+    "lat": -30.1152352,
+    "lon": -51.2127196,
+    "tags": {
+      "addr:housenumber": "107",
+      "addr:street": "Avenida João Salomoni",
+      "amenity": "pharmacy",
+      "brand": "Farmácia São João",
+      "brand:wikidata": "Q65164556",
+      "healthcare": "pharmacy",
+      "name": "Farmácia São João",
+      "website": "http://www.saojoaofarmacias.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5842263913,
+    "lat": -30.0742113,
+    "lon": -51.2027684,
+    "tags": {
+      "addr:housenumber": "539",
+      "addr:postcode": "90680-570",
+      "addr:street": "Rua Coronel Aparício Borges",
+      "alt_name": "Farmácia Mais Saúde",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácia + Saúde",
+      "opening_hours": "Su-Sa 08:00-23:00",
+      "phone": "+55 51 3339-7144"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6234297772,
+    "lat": -30.0388474,
+    "lon": -51.212115,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "853",
+      "addr:postcode": "90040-193",
+      "addr:street": "Av. Venâncio Aires",
+      "addr:suburb": "Santana",
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Bella Vida",
+      "opening_hours": "Mo-Fr 08:30-19:30; Sa 09:00-18:00",
+      "phone": "+55 51 3330-5383"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6234297777,
+    "lat": -30.0373838,
+    "lon": -51.2102033,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Preço Mais Popular"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6237426817,
+    "lat": -30.0359827,
+    "lon": -51.2099856,
+    "tags": {
+      "addr:housenumber": "1272",
+      "addr:postcode": "90035-191",
+      "addr:street": "Avenida Osvaldo Aranha",
+      "amenity": "pharmacy",
+      "brand": "Pague Menos",
+      "brand:wikidata": "Q7124466",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Pague Menos",
+      "opening_hours": "Mo-Sa 07:00-22:00; Su 08:00-20:00",
+      "phone": "+55 51 3395-4546"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6237781014,
+    "lat": -30.033179,
+    "lon": -51.2107672,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Calêndula Farmácias de Manipulação",
+      "phone": "+55 51 3311-4515"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6237840819,
+    "lat": -30.039449,
+    "lon": -51.2201781,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Pague Menos",
+      "brand:wikidata": "Q7124466",
+      "brand:wikipedia": "pt:Pague Menos",
+      "healthcare": "pharmacy",
+      "name": "Pague Menos"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6238670868,
+    "lat": -30.0373344,
+    "lon": -51.2095108,
+    "tags": {
+      "addr:housenumber": "1143",
+      "addr:postcode": "90040-193",
+      "addr:street": "Avenida Venâncio Aires",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Maxxi Econômica Farmácias",
+      "opening_hours": "Mo-Su 08:00-22:00",
+      "phone": "+55 51 3332-2166"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6239424235,
+    "lat": -30.0423031,
+    "lon": -51.2122307,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Droga Raia",
+      "brand:wikidata": "Q10357101",
+      "brand:wikipedia": "pt:RaiaDrogasil",
+      "healthcare": "pharmacy",
+      "name": "Droga Raia",
+      "opening_hours": "Mo-Su 07:00-23:00",
+      "phone": "+55 51 3029-3584"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6239524962,
+    "lat": -30.0372543,
+    "lon": -51.2084198,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Drogabel Ramiro Barcelos",
+      "opening_hours": "Mo-Sa 07:30-19:00",
+      "phone": "+55 51 3333-3159"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6239534306,
+    "lat": -30.0370674,
+    "lon": -51.2085571,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Pharmaplus Farmacia de Manipulação",
+      "opening_hours": "Mo-Fr 08:30-19:00; Sa 08:30-12:30",
+      "phone": "+55 51 3333-3988"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6240012595,
+    "lat": -30.0413055,
+    "lon": -51.2106056,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Fiton Farmácia",
+      "opening_hours": "Mo-Fr 09:00-19:00",
+      "phone": "+55 51 3023-3333"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6240738931,
+    "lat": -30.0367454,
+    "lon": -51.2233783,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "Mo-Su 07:30-00:00",
+      "phone": "+55 51 3217-9930"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6242510643,
+    "lat": -30.0399704,
+    "lon": -51.2083626,
+    "tags": {
+      "addr:housenumber": "2333",
+      "addr:postcode": "90035-000",
+      "addr:street": "Rua Ramiro Barcelos",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Clinifarma",
+      "opening_hours": "Mo-Fr 08:00-18:00",
+      "phone": "+55 51 3330-7071"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6340524615,
+    "lat": -30.0226258,
+    "lon": -51.174505,
+    "tags": {
+      "addr:housenumber": "2099",
+      "addr:postcode": "90480-201",
+      "addr:street": "Rua Anita Garibaldi",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "phone": "+55 51 3328-1410"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6356212201,
+    "lat": -30.0349732,
+    "lon": -51.225589,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Associadas"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6472532628,
+    "lat": -30.010367,
+    "lon": -51.1588392,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "2840",
+      "addr:postcode": "91010-002",
+      "addr:street": "Avenida Assis Brasil",
+      "addr:suburb": "Cristo Redentor",
+      "amenity": "pharmacy",
+      "brand": "Farmácia São João",
+      "brand:wikidata": "Q65164556",
+      "brand:wikipedia": "pt:Farmácias São João",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Farmácia São João",
+      "phone": "+55 51 4061-9707",
+      "website": "https://www.saojoaofarmacias.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6791167731,
+    "lat": -30.0290998,
+    "lon": -51.2082081,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "dispensing": "yes",
+      "drive_through": "no",
+      "healthcare": "pharmacy",
+      "name": "São João",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6828219093,
+    "lat": -30.029745,
+    "lon": -51.2080236,
+    "tags": {
+      "addr:street": "Rua Coronel Frederico Linck",
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "drive_through": "no",
+      "healthcare": "pharmacy",
+      "name": "Alquimia",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6859016456,
+    "lat": -30.0288161,
+    "lon": -51.2041674,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6859016463,
+    "lat": -30.0245891,
+    "lon": -51.2010785,
+    "tags": {
+      "addr:housenumber": "742",
+      "addr:street": "Rua 24 de Outubro",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "check_date": "2025-11-10",
+      "dispensing": "yes",
+      "drive_through": "no",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "24/7",
+      "phone": "+55 51 3268-6745",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6881383283,
+    "lat": -30.0026344,
+    "lon": -51.1456341,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Sanar"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6881396512,
+    "lat": -30.0039675,
+    "lon": -51.1462311,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6903444598,
+    "lat": -30.0417947,
+    "lon": -51.1510904,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Farmais"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6903954895,
+    "lat": -30.1325527,
+    "lon": -51.2334278,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6909248034,
+    "lat": -30.0740131,
+    "lon": -51.2030534,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7118171140,
+    "lat": -29.9990648,
+    "lon": -51.1985937,
+    "tags": {
+      "addr:street": "Avenida Farrapos",
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7143280217,
+    "lat": -30.0365704,
+    "lon": -51.2089028,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Associadas"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7143280218,
+    "lat": -30.0366473,
+    "lon": -51.2087449,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7178015461,
+    "lat": -30.0492433,
+    "lon": -51.203193,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7230096032,
+    "lat": -30.0361977,
+    "lon": -51.2095795,
+    "tags": {
+      "addr:housenumber": "1300",
+      "addr:street": "Av. Osvaldo Aranha",
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "healthcare": "pharmacy",
+      "name": "São João",
+      "note": "Antigo Unibanco e Itaú.",
+      "opening_hours": "Mo-Fr 10:00-16:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7323342342,
+    "lat": -30.1196852,
+    "lon": -51.2073243,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Agafarma",
+      "brand:wikidata": "Q93735939",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Agafarma"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7498713456,
+    "lat": -29.9993666,
+    "lon": -51.1313698,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7798876479,
+    "lat": -30.0337403,
+    "lon": -51.2022735,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "100 Loja 104",
+      "addr:postcode": "90420-100",
+      "addr:street": "Rua Paraguai",
+      "addr:suburb": "Rio Branco",
+      "amenity": "pharmacy",
+      "branch": "Filial Zaffari Cabral",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "level": "1",
+      "name": "Panvel",
+      "opening_hours": "Mo-Sa 07:30-21:00; Su 08:30-20:00",
+      "phone": "+55 51 3331-5484",
+      "website": "https://www.panvel.com/panvel/nossas-lojas/RS/Porto-Alegre/R-Paraguai-100-Loja-104/357",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7924152703,
+    "lat": -30.0025393,
+    "lon": -51.1650309,
+    "tags": {
+      "amenity": "pharmacy",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Associadas"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9020331427,
+    "lat": -29.9991622,
+    "lon": -51.1910798,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "brand:wikipedia": "pt:Panvel",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9710344117,
+    "lat": -30.0595823,
+    "lon": -51.228548,
+    "tags": {
+      "addr:postcode": "91040-540",
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Associadas"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9960425873,
+    "lat": -30.1323625,
+    "lon": -51.2339158,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "dispensing": "yes",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10043805617,
+    "lat": -30.0809892,
+    "lon": -51.2099161,
+    "tags": {
+      "addr:street": "Avenida Engenheiro Ludolfo Boehl",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "check_date:opening_hours": "2026-08-01",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "Mo-Sa 07:00-23:00; Su 08:00-22:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10043805618,
+    "lat": -30.0826016,
+    "lon": -51.2137773,
+    "tags": {
+      "addr:street": "Avenida Teresópolis",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "check_date:opening_hours": "2025-09-29",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "Mo-Sa 07:30-23:00; Su 08:00-22:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10205285439,
+    "lat": -30.0084346,
+    "lon": -51.1785794,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Associadas"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10591673950,
+    "lat": -30.0116614,
+    "lon": -51.1684965,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácia do Trabalhador"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11140036705,
+    "lat": -30.1384572,
+    "lon": -51.2206228,
+    "tags": {
+      "addr:housenumber": "510",
+      "addr:street": "Avenida Juca Batista",
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "healthcare": "pharmacy",
+      "name": "São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11157686387,
+    "lat": -30.0301866,
+    "lon": -51.1435202,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11157686388,
+    "lat": -30.0301724,
+    "lon": -51.1429995,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11439151529,
+    "lat": -30.0232499,
+    "lon": -51.2012598,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11461197069,
+    "lat": -30.0582454,
+    "lon": -51.1951581,
+    "tags": {
+      "addr:housenumber": "1931",
+      "addr:street": "Avenida Bento Gonçalves",
+      "amenity": "pharmacy",
+      "brand": "Droga Raia",
+      "brand:wikidata": "Q10357101",
+      "healthcare": "pharmacy",
+      "name": "Droga Raia",
+      "opening_hours": "Mo-Su 07:00-23:00",
+      "phone": "+55 51 99870-0285"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11991930461,
+    "lat": -30.043945,
+    "lon": -51.143567,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "7005",
+      "addr:postcode": "91310-000",
+      "addr:street": "Av. Protasio Alves",
+      "addr:suburb": "Jardim Carvalho",
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "drive_through": "no",
+      "healthcare": "pharmacy",
+      "name": "Panvel",
+      "opening_hours": "Mo-Su 07:00-23:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11991981896,
+    "lat": -30.0412937,
+    "lon": -51.1538422,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12072290545,
+    "lat": -30.0342157,
+    "lon": -51.2365024,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "488",
+      "addr:postcode": "90010-280",
+      "addr:street": "Rua Duque de Caxias",
+      "addr:suburb": "Centro Histórico",
+      "amenity": "pharmacy",
+      "branch": "Duque de Caxias",
+      "brand": "Agafarma",
+      "brand:wikidata": "Q93735939",
+      "healthcare": "pharmacy",
+      "name": "Agafarma",
+      "opening_hours": "Mo-Su 08:00-21:00"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12327743400,
+    "lat": -30.0537082,
+    "lon": -51.2283542,
+    "tags": {
+      "amenity": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12327813436,
+    "lat": -30.0920791,
+    "lon": -51.2419027,
+    "tags": {
+      "amenity": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12327829696,
+    "lat": -30.0506894,
+    "lon": -51.1943974,
+    "tags": {
+      "amenity": "pharmacy",
+      "name": "Farmácias São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12374599699,
+    "lat": -30.0310533,
+    "lon": -51.2143388,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "São João",
+      "brand:wikidata": "Q62663306",
+      "healthcare": "pharmacy",
+      "name": "São João"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13082356196,
+    "lat": -30.0306345,
+    "lon": -51.2321838,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Farmácias Associadas"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13252269198,
+    "lat": -30.0526976,
+    "lon": -51.1878631,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Droga Raia",
+      "brand:wikidata": "Q10357101",
+      "healthcare": "pharmacy",
+      "name": "Droga Raia"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13252269199,
+    "lat": -30.0525467,
+    "lon": -51.1882762,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Pague Menos",
+      "brand:wikidata": "Q7124466",
+      "healthcare": "pharmacy",
+      "name": "Pague Menos"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13645291391,
+    "lat": -30.0289246,
+    "lon": -51.2245572,
+    "tags": {
+      "amenity": "pharmacy",
+      "brand": "Panvel",
+      "brand:wikidata": "Q10344254",
+      "healthcare": "pharmacy",
+      "name": "Panvel"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13646358494,
+    "lat": -30.0298255,
+    "lon": -51.2258463,
+    "tags": {
+      "amenity": "pharmacy",
+      "healthcare": "pharmacy",
+      "name": "Preço Popular"
+    }
+  },
+  {
+    "type": "node",
+    "id": 593534848,
+    "lat": -30.040313,
+    "lon": -51.1268004,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "8453",
+      "addr:postcode": "91310-000",
+      "addr:street": "Avenida Protásio Alves",
+      "addr:suburb": "Protásio Alves",
+      "name": "Gecepel",
+      "opening_hours": "09:00-21:00",
+      "phone": "+55 51 3386-4699",
+      "shop": "supermarket",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 593534849,
+    "lat": -30.0389894,
+    "lon": -51.1239197,
+    "tags": {
+      "name": "Super Beck",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 598724562,
+    "lat": -30.0425545,
+    "lon": -51.1259974,
+    "tags": {
+      "name": "Geovanella",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 842658544,
+    "lat": -30.0374133,
+    "lon": -51.1946957,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "1677",
+      "addr:postcode": "90460-001",
+      "addr:street": "Avenida Coronel Lucas de Oliveira",
+      "addr:suburb": "Petrópolis",
+      "name": "Mini Mercado Ponto Verde",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1139968417,
+    "lat": -30.0268257,
+    "lon": -51.1623591,
+    "tags": {
+      "entrance": "yes",
+      "name": "Shopping Iguatemi",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1445703677,
+    "lat": -29.9996445,
+    "lon": -51.1318274,
+    "tags": {
+      "addr:housenumber": "8000",
+      "addr:postcode": "91130-720",
+      "addr:street": "Avenida Sertório",
+      "name": "Zaffari",
+      "opening_hours": "Mo-Sa 08:00-22:00; Su 10:00-18:00",
+      "phone": "+55 51 3349-9000",
+      "shop": "supermarket",
+      "website": "https://www.zaffari.com.br/",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1518530237,
+    "lat": -30.0358958,
+    "lon": -51.1619917,
+    "tags": {
+      "addr:housenumber": "779",
+      "addr:street": "Rua Doutor Jorge Fayet",
+      "name": "Supermercado Bampi",
+      "opening_hours": "Mo-Fr 08:30-12:00,14:00-20:00; Sa 08:30-13:00,15:00-20:00; Su 09:30-12:30",
+      "phone": "+55 51 3334-3519",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1711666508,
+    "lat": -30.0222907,
+    "lon": -51.1368509,
+    "tags": {
+      "name": "Super Mago",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1723383450,
+    "lat": -30.0616372,
+    "lon": -51.1667741,
+    "tags": {
+      "addr:street": "Avenida Bento Gonçalves",
+      "shop": "supermarket",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1836749399,
+    "lat": -30.0404922,
+    "lon": -51.1271587,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "8435",
+      "addr:postcode": "91310-000",
+      "addr:street": "Avenida Protásio Alves",
+      "addr:suburb": "Morro Santana",
+      "name": "Gecepel",
+      "opening_hours": "08:00-21:00",
+      "shop": "supermarket",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2104291348,
+    "lat": -30.045945,
+    "lon": -51.1364771,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "370",
+      "addr:postcode": "91450-140",
+      "addr:street": "Beco Souza Costa",
+      "addr:suburb": "Jardim Carvalho",
+      "name": "Supermercado Livinalli",
+      "note": "Apesar de não ter sido projetada para cadeirantes, a entrada não possui degraus. O bairro é que não esta adaptado a cadeirantes, quase nenhuma rampa, calçadas irregulares.",
+      "shop": "supermarket",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2104660150,
+    "lat": -30.0295806,
+    "lon": -51.2056415,
+    "tags": {
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2328400005,
+    "lat": -30.0114027,
+    "lon": -51.1611415,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "2611",
+      "addr:postcode": "91010-006",
+      "addr:street": "Avenida Assis Brasil",
+      "addr:suburb": "Passo da Areia",
+      "air_conditioning": "yes",
+      "brand": "Zaffari",
+      "level": "0",
+      "name": "Hipermercado Zaffari Wallig",
+      "opening_hours": "Mo-Sa 08:00-23:00; Su 09:00-21:00",
+      "operator": "Zaffari",
+      "phone": "+55 51 4004 1112",
+      "shop": "supermarket",
+      "stroller": "yes",
+      "toilets:wheelchair": "yes",
+      "website": "https://www.zaffari.com.br/",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2380759411,
+    "lat": -30.0296327,
+    "lon": -51.2134192,
+    "tags": {
+      "addr:housenumber": "769",
+      "addr:street": "Avenida Independência",
+      "name": "Gecepel",
+      "opening_hours": "Mo-Su 09:00-21:00",
+      "phone": "+55 51 3311-3799",
+      "shop": "supermarket",
+      "website": "https://www.gecepel.com.br/",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2400021540,
+    "lat": -30.121559,
+    "lon": -51.2200556,
+    "tags": {
+      "addr:housenumber": "330",
+      "addr:street": "Avenida Eduardo Prado",
+      "branch": "Vila Nova",
+      "brand": "Atacadão",
+      "brand:wikidata": "Q2868739",
+      "name": "Atacadão",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2400021548,
+    "lat": -30.0495407,
+    "lon": -51.2028996,
+    "tags": {
+      "name": "Nacional",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2429353932,
+    "lat": -30.0085731,
+    "lon": -51.1446825,
+    "tags": {
+      "name": "Zaffari Strip Center",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2502921341,
+    "lat": -29.9984243,
+    "lon": -51.141979,
+    "tags": {
+      "addr:housenumber": "6767",
+      "addr:postcode": "91110-581",
+      "addr:street": "Avenida Sertório",
+      "brand": "Atacadão",
+      "brand:wikidata": "Q2868739",
+      "brand:wikipedia": "en:Atacadão",
+      "name": "Atacadão",
+      "opening_hours": "Mo-Sa 08:00-22:00; Su 09:00-17:00",
+      "phone": "+55 51 3390-1601",
+      "shop": "supermarket",
+      "start_date": "2012",
+      "website": "https://www.atacadao.com.br/",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2660063317,
+    "lat": -30.1060571,
+    "lon": -51.2381968,
+    "tags": {
+      "addr:housenumber": "714",
+      "addr:street": "Rua Camaquã",
+      "fixme": "Posição adivinhada, confirmar.",
+      "name": "Supermercado do Sino",
+      "opening_hours": "Mo-Sa 07:00-12:00,14:00-20:00; Su 07:30-12:00",
+      "phone": "+55 51 3249-6933",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2697121821,
+    "lat": -30.0400489,
+    "lon": -51.1649739,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "4668",
+      "addr:postcode": "90410-004",
+      "addr:street": "Av. Protásio Alves",
+      "addr:suburb": "Chácara das Pedras",
+      "name": "Mercado Fante",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2994579953,
+    "lat": -30.0518945,
+    "lon": -51.2074057,
+    "tags": {
+      "name": "Supermercado Maffei",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2994579954,
+    "lat": -30.0625892,
+    "lon": -51.1876068,
+    "tags": {
+      "name": "Supermercado Unisuper",
+      "note": "Local com rampa construída para carrinhos de compras, mas acessível a cadeirantes.",
+      "shop": "supermarket",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3325554965,
+    "lat": -30.0809159,
+    "lon": -51.1715193,
+    "tags": {
+      "name": "Mercado Zaffaneli",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3362307298,
+    "lat": -30.0729568,
+    "lon": -51.2187633,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:street": "Avenida Francisco Massena Vieira",
+      "addr:suburb": "Santa Teresa",
+      "name": "Padaria panesul",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3456314933,
+    "lat": -30.0618015,
+    "lon": -51.1727201,
+    "tags": {
+      "addr:housenumber": "4325",
+      "addr:street": "Avenida Bento Gonçalves",
+      "name": "Mercado Silva",
+      "phone": "+55 51 3336-7390",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3581510169,
+    "lat": -30.0697611,
+    "lon": -51.2048554,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "2185",
+      "addr:postcode": "90660-080",
+      "addr:street": "Avenida Professor Oscar Pereira",
+      "addr:suburb": "Medianeira",
+      "name": "Pezzi Super Anuar",
+      "opening_hours": "Su-Sa 08:00-21:30",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3645142769,
+    "lat": -30.0393871,
+    "lon": -51.2243957,
+    "tags": {
+      "addr:street": "Rua da República",
+      "name": "Asun",
+      "shop": "supermarket",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3733926371,
+    "lat": -30.1025756,
+    "lon": -51.2311271,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "2985",
+      "addr:postcode": "91740-001",
+      "addr:street": "Avenida da Cavalhada",
+      "addr:suburb": "Cavalhada",
+      "name": "Asun Cavalhada",
+      "opening_hours": "08:00-21:00",
+      "shop": "supermarket",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3734907626,
+    "lat": -30.0548913,
+    "lon": -51.187348,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "5200",
+      "addr:postcode": "90610-000",
+      "addr:street": "Avenida Ipiranga",
+      "name": "Hipermercado Bourbon Ipiranga",
+      "operator": "Zaffari Bourbon",
+      "shop": "supermarket",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3739863756,
+    "lat": -30.0223187,
+    "lon": -51.1511263,
+    "tags": {
+      "name": "Bistek Supermercados",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3754891572,
+    "lat": -30.1010836,
+    "lon": -51.1246934,
+    "tags": {
+      "addr:street": "Estrada João de Oliveira Remião",
+      "name": "Mercado Açougue São Jorge",
+      "shop": "supermarket",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3779013187,
+    "lat": -30.1065451,
+    "lon": -51.2226488,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:street": "Avenida Vicente Monteggia",
+      "name": "Mercado vila mercata",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3779013372,
+    "lat": -30.0814549,
+    "lon": -51.2205443,
+    "tags": {
+      "name": "Super Hoffmann",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3779015358,
+    "lat": -30.1085466,
+    "lon": -51.2285874,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:street": "Avenida da Cavalhada",
+      "name": "Supermercado Zaffari",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3798860771,
+    "lat": -30.1493546,
+    "lon": -51.217764,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "405",
+      "addr:postcode": "91770-020",
+      "addr:street": "Rua dos Carijós",
+      "addr:suburb": "Espírito Santo",
+      "name": "Supermercado Postal",
+      "opening_hours": "08:00-20:00",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3798873273,
+    "lat": -30.1419704,
+    "lon": -51.21801,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "1020",
+      "addr:postcode": "91770-001",
+      "addr:street": "Avenida Juca Batista",
+      "addr:suburb": "Belém Novo",
+      "name": "Supermercado Bom",
+      "opening_hours": "08:00-20:00",
+      "phone": "+55 51 3248-2377",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3859797173,
+    "lat": -30.0375841,
+    "lon": -51.193025,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "9",
+      "addr:street": "Rua Barão de Ubá",
+      "name": "Armazém Nobel",
+      "shop": "supermarket",
+      "website": "http://www.armazemnobel.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4192711667,
+    "lat": -30.0311892,
+    "lon": -51.2312596,
+    "tags": {
+      "name": "Nacional",
+      "opening_hours": "Mo-Sa 09:00-22:00; Su 09:00-21:00",
+      "phone": "+55 51 3901-2955",
+      "shop": "supermarket",
+      "website": "http://www.nacional.com.br",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4198056412,
+    "lat": -30.0308811,
+    "lon": -51.2322914,
+    "tags": {
+      "addr:housenumber": "933",
+      "addr:postcode": "90020-005",
+      "addr:street": "Rua dos Andradas",
+      "check_date": "2023-08-26",
+      "contact:phone": "+55 51 3290-4500",
+      "contact:website": "http://zaffari.com.br/",
+      "name": "Zaffari",
+      "official_name": "Zaffari Rua da Praia",
+      "opening_hours": "Mo-Sa 08:00-21:00; Su, PH 09:00-20:00",
+      "ref:vatin": "BR93015006000709;BRRS0960415181",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4227659112,
+    "lat": -30.0489652,
+    "lon": -51.1444079,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "2280",
+      "addr:postcode": "91430-000",
+      "addr:street": "Avenida Antônio de Carvalho",
+      "addr:suburb": "Jardim Carvalho",
+      "name": "Maffei",
+      "phone": "+55 51 3386-4448",
+      "shop": "supermarket",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4278370289,
+    "lat": -30.0621476,
+    "lon": -51.1885188,
+    "tags": {
+      "addr:street": "Avenida Bento Gonçalves",
+      "name": "Guri",
+      "opening_hours": "Mo-Su 08:00-12:00, 21:00-21:00",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4441405596,
+    "lat": -30.0339892,
+    "lon": -51.2388234,
+    "tags": {
+      "addr:postcode": "90010-272",
+      "addr:street": "Rua Riachuelo",
+      "contact:phone": "+55 51 3211-1162",
+      "name": "Centenaro",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4575203391,
+    "lat": -30.0128565,
+    "lon": -51.1610248,
+    "tags": {
+      "name": "Bourbon Hipermercado",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4777755649,
+    "lat": -30.0520141,
+    "lon": -51.1861566,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "520",
+      "addr:street": "Rua Guilherme Alves",
+      "addr:suburb": "Petrópolis",
+      "email": "loja03@gecepel.com.br",
+      "name": "Gecepel",
+      "phone": "+55 51 3354-6699",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4783902337,
+    "lat": -30.0339191,
+    "lon": -51.2023107,
+    "tags": {
+      "addr:housenumber": "600",
+      "addr:postcode": "90420-121",
+      "addr:street": "Rua Cabral",
+      "name": "Zaffari Cabral",
+      "opening_hours": "Mo-Sa 07:30-22:00; Su 09:00-21:00",
+      "phone": "+55 51 3379-4900",
+      "shop": "supermarket",
+      "website": "https://www.zaffari.com.br/",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4985190922,
+    "lat": -30.0614061,
+    "lon": -51.1663493,
+    "tags": {
+      "name": "Carboni 4950",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4985191021,
+    "lat": -30.0650336,
+    "lon": -51.1532814,
+    "tags": {
+      "name": "Carboni 6248",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5022993844,
+    "lat": -30.0243299,
+    "lon": -51.1905377,
+    "tags": {
+      "brand": "Dia",
+      "brand:wikidata": "Q925132",
+      "brand:wikipedia": "es:Supermercados DIA",
+      "name": "Dia",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5062722218,
+    "lat": -30.0618513,
+    "lon": -51.206134,
+    "tags": {
+      "name": "Mercado Tessar",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5062726870,
+    "lat": -30.0765398,
+    "lon": -51.2010567,
+    "tags": {
+      "name": "Supermercado Maccari",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5094194295,
+    "lat": -30.0317567,
+    "lon": -51.2162175,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "90",
+      "addr:street": "Antão de Faria",
+      "addr:suburb": "Independência",
+      "name": "Mercado Spinelli",
+      "opening_hours": "Mo-Su 08:00-21:00",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5213387621,
+    "lat": -30.10895,
+    "lon": -51.2351608,
+    "tags": {
+      "name": "Mini-mercado Canesso",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5405432274,
+    "lat": -30.0331606,
+    "lon": -51.2237731,
+    "tags": {
+      "addr:housenumber": "80",
+      "addr:street": "Avenida Desembargador André da Rocha",
+      "name": "Minimercado Lopes",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5452456323,
+    "lat": -30.0822589,
+    "lon": -51.2122419,
+    "tags": {
+      "addr:housenumber": "3398",
+      "addr:street": "Avenida Teresópolis",
+      "check_date:opening_hours": "2026-05-31",
+      "name": "Super Três",
+      "opening_hours": "Su 07:30-12:30; Mo-Sa 07:30-20:30",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5562381521,
+    "lat": -30.1122622,
+    "lon": -51.1567614,
+    "tags": {
+      "name": "Supermercado costela",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5805244039,
+    "lat": -30.1158913,
+    "lon": -51.2127226,
+    "tags": {
+      "addr:street": "Rua João Salomoni",
+      "name": "Super Hoffman",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5815980246,
+    "lat": -30.0256519,
+    "lon": -51.1512824,
+    "tags": {
+      "addr:housenumber": "1679",
+      "addr:street": "Avenida do Forte",
+      "name": "Big Mix Ltda.",
+      "opening_hours": "Mo-Sa 08:00-21:00, Su 09:00-19:00",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5921484981,
+    "lat": -30.019038,
+    "lon": -51.1754265,
+    "tags": {
+      "name": "Asun Supermercados",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5937114519,
+    "lat": -30.0427105,
+    "lon": -51.1451056,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "6602",
+      "addr:postcode": "91310-002",
+      "addr:street": "Avenida Protásio Alves",
+      "addr:suburb": "Alto Petrópolis",
+      "name": "Super Mercado Dalmmer",
+      "shop": "supermarket",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6237326357,
+    "lat": -30.0405954,
+    "lon": -51.2150537,
+    "tags": {
+      "addr:housenumber": "519",
+      "addr:postcode": "90040-193",
+      "addr:street": "Avenida Venâncio Aires",
+      "name": "Armazèm Progresso",
+      "opening_hours": "Mo-Sa 07:00-20:00; Su 08:00-19:00",
+      "phone": "+55 51 3226-6613",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6237368629,
+    "lat": -30.0387066,
+    "lon": -51.2119216,
+    "tags": {
+      "addr:housenumber": "871",
+      "addr:postcode": "90020-070",
+      "addr:street": "Avenida Venâncio Aires",
+      "name": "Mercado do Nino",
+      "opening_hours": "Mo-Sa 08:00-20:00",
+      "phone": "+55 51 3332-3980",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6237396475,
+    "lat": -30.0370558,
+    "lon": -51.2089577,
+    "tags": {
+      "name": "Center Shop Supermercado",
+      "note": "Antigo Supermercado Nacional.",
+      "opening_hours": "Mo-Fr 07:40-20:00; Sa, Su 09:00-20:30",
+      "phone": "+55 51 3331-4864",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6237403465,
+    "lat": -30.0422554,
+    "lon": -51.2179583,
+    "tags": {
+      "addr:housenumber": "179",
+      "addr:postcode": "90050-103",
+      "addr:street": "Avenida Venâncio Aires",
+      "name": "Center Shop",
+      "opening_hours": "Mo-Sa 08:00-20:30; Su 09:00-20:00",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6239410795,
+    "lat": -30.0400848,
+    "lon": -51.2133713,
+    "tags": {
+      "name": "Super bom",
+      "opening_hours": "Mo-Su 07:00-20:00",
+      "phone": "+55 51 3228-6555",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6239519714,
+    "lat": -30.0318432,
+    "lon": -51.2107658,
+    "tags": {
+      "name": "Espaço Brasco",
+      "opening_hours": "Mo-Sa 07:30-22:30; Su 08:00-14:00",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6239539019,
+    "lat": -30.0374603,
+    "lon": -51.2084198,
+    "tags": {
+      "name": "Mercado e Fruteira Danilo",
+      "opening_hours": "Mo-Fr 08:40-20:00; Sa 07:30-17:30",
+      "phone": "+55 51 3388-7700",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6239885975,
+    "lat": -30.0401611,
+    "lon": -51.2174149,
+    "tags": {
+      "name": "Mercado Pozzebom",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6240003549,
+    "lat": -30.0402966,
+    "lon": -51.2094536,
+    "tags": {
+      "description": "Não aceita cartão",
+      "name": "Mini Mercado Bottega",
+      "phone": "+55 51 3217-4722",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6240019727,
+    "lat": -30.0397358,
+    "lon": -51.2094002,
+    "tags": {
+      "name": "Mercado Spinelli",
+      "opening_hours": "Mo-Sa 07:00-20:00; Su 07:00-13:00",
+      "phone": "+55 51 3012-4719",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6240072425,
+    "lat": -30.0425377,
+    "lon": -51.2190132,
+    "tags": {
+      "name": "Armazém Da Venâncio",
+      "opening_hours": "Mo-Sa 07:00-20:00",
+      "phone": "+55 51 3028-4291",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6361398085,
+    "lat": -30.054671,
+    "lon": -51.2209548,
+    "tags": {
+      "name": "Super Mercado Tradicional Menino Deus",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6361398185,
+    "lat": -30.0669987,
+    "lon": -51.2129452,
+    "tags": {
+      "name": "Supermercado Pezzi",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6363156685,
+    "lat": -30.0656741,
+    "lon": -51.2106153,
+    "tags": {
+      "brand": "Dia",
+      "brand:wikidata": "Q925132",
+      "name": "Dia",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6424408785,
+    "lat": -30.0495633,
+    "lon": -51.2183987,
+    "tags": {
+      "addr:street": "Avenida Érico Veríssimo",
+      "name": "Pezzi Supermercado",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6805854775,
+    "lat": -30.0256257,
+    "lon": -51.2114824,
+    "tags": {
+      "name": "Zaffari",
+      "operator": "Zaffari",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6856411810,
+    "lat": -30.0110831,
+    "lon": -51.1640426,
+    "tags": {
+      "brand": "Dia Market",
+      "brand:wikidata": "Q925132",
+      "brand:wikipedia": "es:Supermercados DIA",
+      "name": "Dia Market",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6864941194,
+    "lat": -30.1423521,
+    "lon": -51.2197321,
+    "tags": {
+      "name": "Zaffari Ipanema",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6881383282,
+    "lat": -30.0026264,
+    "lon": -51.1460577,
+    "tags": {
+      "name": "Supermercado Guará",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7108510040,
+    "lat": -30.0441025,
+    "lon": -51.2227684,
+    "tags": {
+      "name": "Macromix",
+      "opening_hours": "Mo-Sa 08:00-22:00; Su,PH 08:00-20:00",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7142026471,
+    "lat": -30.0473633,
+    "lon": -51.224205,
+    "tags": {
+      "addr:housenumber": "527",
+      "addr:postcode": "90110-170",
+      "addr:street": "Rua Dezessete de Junho",
+      "name": "Mercado Bochi",
+      "opening_hours": "Mo-Sa 07:00-20:30",
+      "phone": "+55 51 3225-1899",
+      "shop": "supermarket",
+      "website": "https://www.facebook.com/mercadobochi/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7230102749,
+    "lat": -30.0417671,
+    "lon": -51.2091789,
+    "tags": {
+      "addr:housenumber": "463",
+      "addr:postcode": "90040-270",
+      "addr:street": "Rua Jacinto Gomes",
+      "name": "Fruteira Zerbes",
+      "opening_hours": "Mo-Fr 07:30-22:00; Sa, Su 08:30-21:00",
+      "phone": "+55 51 3062-7074",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9060100674,
+    "lat": -30.0563064,
+    "lon": -51.1982118,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "1577",
+      "addr:street": "Avenida Bento Gonçalves",
+      "name": "Boa Compra Mercado Fruteira e Padaria",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10203746117,
+    "lat": -30.0420973,
+    "lon": -51.2207483,
+    "tags": {
+      "addr:housenumber": "888",
+      "addr:street": "Rua José do Patrocínio",
+      "name": "Armazém do Campo",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10742157726,
+    "lat": -30.0027889,
+    "lon": -51.1420811,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:country": "BR",
+      "addr:housenumber": "781",
+      "addr:postcode": "91060-320",
+      "addr:street": "Rua Joaquim Silveira",
+      "addr:suburb": "AP 02",
+      "email": "contato@mercadobergamota.com",
+      "name": "Bergamota Mercado Vegano",
+      "opening_hours": "Mo-Sa 09:00-20:00",
+      "payment:cash": "yes",
+      "payment:credit_cards": "yes",
+      "payment:debit_cards": "yes",
+      "payment:mastercard": "yes",
+      "payment:pix": "yes",
+      "payment:visa": "yes",
+      "payment:whatsapp": "yes",
+      "phone": "+55 51 983017175",
+      "shop": "supermarket",
+      "website": "mercadobergamota.com"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11153458352,
+    "lat": -30.0279837,
+    "lon": -51.1582777,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "3228",
+      "addr:postcode": "91340-070",
+      "addr:street": "Avenida Doutor Nilo Peçanha",
+      "addr:suburb": "Jardim Europa",
+      "name": "Mercado Brasco",
+      "operator": "Mercado Brasco",
+      "payment:cash": "yes",
+      "payment:credit_cards": "yes",
+      "payment:debit_cards": "yes",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11157686390,
+    "lat": -30.029855,
+    "lon": -51.1426048,
+    "tags": {
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11157741983,
+    "lat": -30.0294871,
+    "lon": -51.1402154,
+    "tags": {
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11340189803,
+    "lat": -30.0054965,
+    "lon": -51.1910923,
+    "tags": {
+      "name": "Vantajão Atacado",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11647247090,
+    "lat": -30.0281892,
+    "lon": -51.1720295,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "2031",
+      "addr:postcode": "91330-000",
+      "addr:street": "Avenida Doutor Nilo Peçanha",
+      "addr:suburb": "Três Figueiras",
+      "name": "Bistek Astir Center Mall",
+      "opening_hours": "Mo-Sa 07:30-22:00",
+      "operator": "Bistek",
+      "payment:cash": "yes",
+      "payment:credit_cards": "yes",
+      "payment:debit_cards": "yes",
+      "payment:pix": "yes",
+      "phone": "+555131030645",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11807092085,
+    "lat": -30.0419177,
+    "lon": -51.1518013,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "5973",
+      "addr:postcode": "91430-003",
+      "addr:street": "Avenida Protásio Alves",
+      "addr:suburb": "Bom Jesus",
+      "name": "Cavalleri Supermercado",
+      "payment:cash": "yes",
+      "payment:credit_cards": "yes",
+      "payment:debit_cards": "yes",
+      "phone": "+55 51 3062 9114",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12233700764,
+    "lat": -30.0236813,
+    "lon": -51.1214857,
+    "tags": {
+      "name": "Stok Center",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12436834397,
+    "lat": -30.029233,
+    "lon": -51.1941365,
+    "tags": {
+      "addr:housenumber": "740",
+      "addr:postcode": "90440-010",
+      "addr:street": "Avenida Coronel Lucas de Oliveira",
+      "addr:suburb": "Mont'Serrat",
+      "name": "Zaffari",
+      "shop": "supermarket",
+      "source": "osm notes;https://www.zaffari.com.br/novidades/zaffari-lucas-de-oliveira-esta-esperando-sua-visita/4942/p"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12456377101,
+    "lat": -30.1029237,
+    "lon": -51.2344975,
+    "tags": {
+      "addr:city": "PORTO ALEGRE",
+      "addr:housenumber": "2500 LOJA 101",
+      "addr:postcode": "91910-001",
+      "addr:street": "Avenida Otto Niemeyer",
+      "addr:suburb": "TRISTEZA",
+      "name": "CSN SUPLEMENTOS ATACADO",
+      "payment:bitcoincash": "yes",
+      "payment:cash": "yes",
+      "payment:coinos": "yes",
+      "payment:coins": "yes",
+      "payment:credit_cards": "yes",
+      "payment:cryptocurrencies": "yes",
+      "payment:debit_cards": "yes",
+      "phone": "+55 51 99620 0851",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12743612508,
+    "lat": -30.1024212,
+    "lon": -51.2342453,
+    "tags": {
+      "name": "Supercavalhada",
+      "opening_hours": "Mo-Sa 08:00-20:00",
+      "operator": "Sandra Darui",
+      "shop": "supermarket",
+      "stroller": "yes",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12747457734,
+    "lat": -30.0415649,
+    "lon": -51.1372814,
+    "tags": {
+      "addr:housenumber": "7500",
+      "addr:postcode": "91310-001",
+      "addr:street": "Avenida Protásio Alves",
+      "name": "Cestto Atacadista",
+      "operator": "Zaffari",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12821398046,
+    "lat": -30.0556831,
+    "lon": -51.1982992,
+    "tags": {
+      "name": "Hoffmann Supermercados",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13784815615,
+    "lat": -30.0882025,
+    "lon": -51.1231855,
+    "tags": {
+      "name": "Supermercado Bom Dia",
+      "shop": "supermarket"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1245886959,
+    "lat": -30.0999314,
+    "lon": -51.2483743,
+    "tags": {
+      "name": "Padaria Pão do Bairro",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2429519557,
+    "lat": -30.0365671,
+    "lon": -51.2207772,
+    "tags": {
+      "name": "Armazém da Esquina",
+      "shop": "bakery",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2885350385,
+    "lat": -29.9948519,
+    "lon": -51.129769,
+    "tags": {
+      "addr:street": "Avenida Assis Brasil",
+      "name": "Piratini",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3148967332,
+    "lat": -30.0379585,
+    "lon": -51.1874491,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "641",
+      "addr:postcode": "90460-200",
+      "addr:street": "Avenida Ijuí",
+      "check_date": "2024-10-03",
+      "check_date:currency:XBT": "2023-08-11",
+      "currency:XBT": "yes",
+      "email": "contato@padariamercopan.com.br",
+      "name": "Mercopan",
+      "payment:lightning": "yes",
+      "payment:onchain": "yes",
+      "phone": "+55 51 3391-8090",
+      "shop": "bakery",
+      "survey:date": "2023-08-11",
+      "website": "https://www.padariamercopan.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3233708049,
+    "lat": -30.0323784,
+    "lon": -51.2367678,
+    "tags": {
+      "addr:housenumber": "483",
+      "addr:street": "Rua dos Andradas",
+      "contact:phone": "+55 51 3226-9191",
+      "contact:website": "http://www.cafeeconfeitariaandradas.com.br/",
+      "name": "Andradas",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3234305632,
+    "lat": -30.0313151,
+    "lon": -51.2336419,
+    "tags": {
+      "addr:housenumber": "797",
+      "addr:postcode": "90020-003",
+      "addr:street": "Rua dos Andradas",
+      "check_date": "2025-10-30",
+      "check_date:opening_hours": "2025-10-30",
+      "contact:phone": "+55 51 3212-9188",
+      "name": "Padaria & Confeitaria Roma",
+      "opening_hours": "Mo-Fr 07:00-21:30; Sa,Su,PH 08:00-21:00",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3733792200,
+    "lat": -30.0933811,
+    "lon": -51.2309005,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "1526",
+      "addr:postcode": "90820-000",
+      "addr:street": "Rua Doutor Campos Velho",
+      "addr:suburb": "Nonoai",
+      "name": "Nutripão",
+      "opening_hours": "07:00-22:00",
+      "shop": "bakery",
+      "wheelchair": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3733895910,
+    "lat": -30.0435003,
+    "lon": -51.1356862,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "83",
+      "addr:postcode": "91450-510",
+      "addr:street": "Avenida Mãe Apolinária Maria Batista",
+      "addr:suburb": "Jardim Carvalho",
+      "name": "Confeitaria Helena",
+      "opening_hours": "08:00-17:00",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3735241074,
+    "lat": -30.0230256,
+    "lon": -51.2036908,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "56",
+      "addr:postcode": "90570-050",
+      "addr:street": "Rua Dinarte Ribeiro",
+      "addr:suburb": "Moinhos de Vento",
+      "description": "Entre bagels, brioches e pães, a Barbarella é referência quando falamos em padaria. Aberta desde 2002, a casa tem um ambiente superacolhedor, ótimo até mesmo para trabalhar. Nossa sugestão é aproveitar um café da manhã com o sanduíche simples.",
+      "name": "Barbarella Bakery",
+      "note": "Disponibiliza mesas na calçada.",
+      "opening_hours": "Mo, We-Su 08:00-21:15",
+      "phone": "+55 51 3268-9720",
+      "shop": "bakery",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3735357469,
+    "lat": -30.1123809,
+    "lon": -51.2565808,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "257",
+      "addr:postcode": "91920-520",
+      "addr:street": "Rua Doutor Armando Barbedo",
+      "addr:suburb": "Tristeza",
+      "name": "Machry",
+      "shop": "bakery",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3779013186,
+    "lat": -30.1035353,
+    "lon": -51.2235564,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "1029",
+      "addr:street": "Avenida Vicente Monteggia",
+      "addr:suburb": "Cavalhada",
+      "name": "Padaria Gritti",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4124532085,
+    "lat": -30.0174381,
+    "lon": -51.1955938,
+    "tags": {
+      "addr:housenumber": "512",
+      "addr:street": "Avenida Nova York",
+      "name": "Misses Cakes",
+      "phone": "+55 51 3085-5740",
+      "shop": "bakery",
+      "website": "http://missescakes.com",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4317582202,
+    "lat": -30.0111644,
+    "lon": -51.1464735,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "61",
+      "addr:postcode": "91370-170",
+      "addr:street": "Rua Dom Cláudio José Gonçalves Ponce de Leon",
+      "addr:suburb": "Cristo Redentor",
+      "name": "Florenzza",
+      "opening_hours": "Mo-Su 07:00-20:30",
+      "phone": "+55 51 3344-4100",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4430045366,
+    "lat": -30.0456739,
+    "lon": -51.1524999,
+    "tags": {
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4430045608,
+    "lat": -30.0499654,
+    "lon": -51.1541398,
+    "tags": {
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4437056127,
+    "lat": -30.062706,
+    "lon": -51.1460724,
+    "tags": {
+      "name": "Padaria Inês",
+      "phone": "+55 51 3386-2455",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4508867998,
+    "lat": -30.0318143,
+    "lon": -51.191579,
+    "tags": {
+      "addr:housenumber": "74",
+      "addr:street": "Rua Engenheiro Antônio Rebouças",
+      "description": "Local aconchegante que serve pães e doces da Alemanha, Áustria e França, além de lanches gourmet.",
+      "name": "Jean Pierre Pâtisserie et Boulangerie",
+      "opening_hours": "Tu-Su 08:00-20:00; Mo 12:00-20:00",
+      "phone": "+55 51 3332-8142",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4536470720,
+    "lat": -30.0351783,
+    "lon": -51.2328526,
+    "tags": {
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4590398263,
+    "lat": -30.0385156,
+    "lon": -51.2246768,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "361",
+      "addr:postcode": "90050-101",
+      "addr:street": "Rua José do Patrocínio",
+      "addr:suburb": "Cidade Baixa",
+      "name": "Suíça Padaria, Tortaria e Cafeteria",
+      "phone": "+55 51 3084-9008",
+      "shop": "bakery",
+      "website": "http://padariasuica.com/index.php?acao=0",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4784882791,
+    "lat": -30.0329153,
+    "lon": -51.2114811,
+    "tags": {
+      "addr:housenumber": "94",
+      "addr:postcode": "90035-100",
+      "addr:street": "Rua Henrique Dias",
+      "description": "Café elegante e intimista com mesas e poltronas, que oferece sobremesas, chás, salgadinhos e doces.,é conhecida pelas massas folhadas que ganham coberturas, ex de doce de leite c/chocolate + castanha (R$ 93,50/kg).",
+      "name": "Confeitaria Barcelona",
+      "opening_hours": "Tu-Sa 09:00-19:30; Mo 10:00-19:30",
+      "phone": "+55 51 3311-1055",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4787233358,
+    "lat": -30.0351474,
+    "lon": -51.2253892,
+    "tags": {
+      "addr:housenumber": "98",
+      "addr:postcode": "90050-100",
+      "addr:street": "Rua General Lima e Silva",
+      "name": "Confeitaria Dá Gosto",
+      "opening_hours": "Mo-Fr 07:30-19:30; Sa 07:30-14:00",
+      "phone": "+55 51 3029-5733",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4880339939,
+    "lat": -30.0363039,
+    "lon": -51.2112693,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housename": "Loja 20",
+      "addr:postcode": "90035-191",
+      "addr:street": "Avenida Osvaldo Aranha",
+      "addr:suburb": "Farroupilha",
+      "name": "Georges Pastel Bom Fim",
+      "opening_hours": "Su-Sa 09:00-00:00",
+      "phone": "+55 51 3331-6234",
+      "shop": "bakery",
+      "toilets:wheelchair": "no",
+      "website": "http://www.georgesrs.com.br",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4960380925,
+    "lat": -30.0071838,
+    "lon": -51.1469442,
+    "tags": {
+      "addr:housenumber": "158",
+      "addr:street": "Avenida João XXIII",
+      "name": "Padaria e Confeitaria Dolci Sorelle",
+      "phone": "+55 51 3508-2849",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5159408162,
+    "lat": -30.0335317,
+    "lon": -51.2066384,
+    "tags": {
+      "addr:housenumber": "13",
+      "addr:street": "Rua Giordano Bruno",
+      "name": "Pãozeiro",
+      "opening_hours": "Mo 13:00-19:00; Tu-Sa 10:00-19:00",
+      "phone": "+55 51 3085-7008",
+      "shop": "bakery",
+      "website": "http://www.paozeiro.com.br/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5349266950,
+    "lat": -30.0308982,
+    "lon": -51.2240288,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:street": "Avenida Senador Salgado Filho",
+      "addr:suburb": "Centro Histórico",
+      "name": "Família do Pão",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5405432276,
+    "lat": -29.9802955,
+    "lon": -51.1898436,
+    "tags": {
+      "addr:housenumber": "161",
+      "addr:street": "Avenida Engenheiro Felício Lemieszek",
+      "name": "Padaria e Confeitaria Veneciana",
+      "opening_hours": "Mo-Sa 07:00-20:00; Su 07:30-12:00,16:00-18:00",
+      "phone": "+55 51 3362-2401",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6239452706,
+    "lat": -30.0325813,
+    "lon": -51.2107697,
+    "tags": {
+      "addr:housenumber": "360",
+      "addr:postcode": "90035-090",
+      "addr:street": "Rua Fernandes Vieira",
+      "name": "Chocólatras",
+      "opening_hours": "Mo-Fr 12:00-20:00; Sa, Su 10:00-20:00",
+      "phone": "+55 51 3022-4321",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6239455998,
+    "lat": -30.0315285,
+    "lon": -51.2124519,
+    "tags": {
+      "description": "Panificadora de produtos nobres e área gastronômica de lanches artesanais finos em pães especiais da casa.",
+      "name": "Mercopan",
+      "opening_hours": "Mo-Fr 08:00-20:00, 09:00-18:00; Sa, Su 09:00-20:00",
+      "phone": "+55 51 3273-7978",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6239893940,
+    "lat": -30.0404816,
+    "lon": -51.2171745,
+    "tags": {
+      "addr:housenumber": "1027",
+      "addr:postcode": "90040-000",
+      "addr:street": "Avenida João Pessoa",
+      "name": "Padaria João Pessoa",
+      "opening_hours": "Mo-Sa 06:15-20:00",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6240020097,
+    "lat": -30.0400772,
+    "lon": -51.2086105,
+    "tags": {
+      "name": "Confeitaria Santo Antônio",
+      "opening_hours": "Mo-Su 09:00-19:00",
+      "phone": "+55 51 3061-2940",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6240030551,
+    "lat": -30.0579662,
+    "lon": -51.2226257,
+    "tags": {
+      "name": "O Pão da Fé Padaria e Confeitaria",
+      "opening_hours": "Mo-Sa 07:00-20:00; Su 07:00-12:00, 15:00-19:00",
+      "phone": "+55 51 3233-0177",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6242410401,
+    "lat": -30.0396137,
+    "lon": -51.209404,
+    "tags": {
+      "addr:housenumber": "231",
+      "addr:postcode": "90040-270",
+      "addr:street": "Rua Jacinto Gomes",
+      "name": "Padaria e Confeitaria Arte Doces",
+      "opening_hours": "Mo-Su 08:00-19:00",
+      "phone": "+55 51 3219-3773",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6258931941,
+    "lat": -30.0295968,
+    "lon": -51.2234825,
+    "tags": {
+      "addr:housenumber": "1812",
+      "addr:postcode": "90020-160",
+      "addr:street": "Rua dos Andradas",
+      "description": "Desde 1960, é um dos balcõezinhos mais queridos do Centro. E é o cachorrinho-quente com a mostarda feita na casa que nos faz voltar sempre.",
+      "name": "Confritaria Princesa",
+      "opening_hours": "Mo-Fr 08:30-18:30",
+      "phone": "+55 51 3225-5231",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6260991871,
+    "lat": -30.0127964,
+    "lon": -51.204525,
+    "tags": {
+      "addr:housenumber": "1492",
+      "addr:postcode": "90230-010",
+      "addr:street": "Avenida Presidente Franklin Roosevelt",
+      "name": "La Tasca São Geraldo",
+      "opening_hours": "Mo-Sa 08:29-18:00",
+      "phone": "+55 51 3103-2781",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6260995394,
+    "lat": -30.0200119,
+    "lon": -51.1971664,
+    "tags": {
+      "addr:street": "R. Cel. Bordini, 232 - Auxiliadora, Porto Alegre - RS, 90440-003",
+      "description": "A boulangerie é um recanto francês nos pequenos detalhes, desde a decoração até o cardápio. Com produção artesanal, a casa oferece croissants, baguetes, quiches, tartes e outras delícias.",
+      "name": "Alban Rossollin",
+      "opening_hours": "Tu-Sa 09:00-19:30; Su 08:00-12:00",
+      "phone": "+55 51 3333-5577",
+      "shop": "bakery",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6261007119,
+    "lat": -30.1115761,
+    "lon": -51.2542419,
+    "tags": {
+      "addr:door": "Sala 01",
+      "addr:housenumber": "510",
+      "addr:postcode": "91920-520",
+      "addr:street": "Rua Doutor Armando Barbedo",
+      "description": "Pão australiano, baguete francesa, brioche, pão de beterraba, croissant e pão multigrãos são apenas algumas das receitas produzidas por lá.",
+      "name": "Pão Santo Padaria Artesanal",
+      "opening_hours": "Mo-Sa 08:30-19:00",
+      "phone": "+55 51 3237-3007",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6261008018,
+    "lat": -30.0248528,
+    "lon": -51.1918297,
+    "tags": {
+      "addr:housenumber": "328",
+      "addr:postcode": "90450-060",
+      "addr:street": "Rua Doutor Freire Alemão",
+      "description": "Especializada em receitas uruguaias, a padaria oferece gostosuras como vigilantes, alfajores e bocaditos, além das tortas chajá e rogel. Entre os salgados, estão panchos e sanduíches de miga.",
+      "name": "Sabor de Luna",
+      "opening_hours": "Mo-Sa 09:00-19:00",
+      "phone": "+55 51 3392-4244",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6261009346,
+    "lat": -30.032032,
+    "lon": -51.2069244,
+    "tags": {
+      "addr:housenumber": "514",
+      "addr:postcode": "90420-111",
+      "addr:street": "Rua Vasco da Gama",
+      "description": "É o local para tomar aqueles cafés americanos de filme, com direito a panquecas e tudo mais. O cardápio contempla opções como bagels, muffins, brownies, cookies, cinnamon roll, além de pratos como o Eggs Benedict.",
+      "name": "Priscilla's Bakery",
+      "opening_hours": "Tu-Su 09:00-19:30",
+      "phone": "+55 51 3013-6131",
+      "shop": "bakery",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6261010620,
+    "lat": -30.0281067,
+    "lon": -51.2032661,
+    "tags": {
+      "addr:housenumber": "151",
+      "addr:postcode": "90430-010",
+      "addr:street": "Rua Doutor Florêncio Ygartua",
+      "description": "É um mercadinho cheio de estilo, onde o pessoal costuma começar o dia com um café da manhã. Tem mesinhas na rua, mas a ideia é buscar um combo de expresso com sanduíche para levar. Fica a dica para o pão de queijo quentinho",
+      "name": "Mercado Brasco",
+      "opening_hours": "Mo-Sa 07:30-21:00",
+      "phone": "+55 51 3573-8333",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6261010981,
+    "lat": -30.0410252,
+    "lon": -51.2187271,
+    "tags": {
+      "addr:housenumber": "19",
+      "addr:postcode": "90050-350",
+      "addr:street": "Rua Joaquim Nabuco",
+      "description": "Se você procura por pães de fermentação natural, é o lugar certo. Complexidade de sabores, casquinha crocante e miolo macio fazem das iguarias produzidas por lá são obras de arte. Do forno saem pães de grãos, de moranga com chia, baguetes e ciabatas.",
+      "name": "Massa Madre Padaria Artesanal",
+      "opening_hours": "Tu-Fr 12:00-19:00; Sa 12:00-18:00",
+      "phone": "+55 51 99959-4929",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6261011666,
+    "lat": -30.0299664,
+    "lon": -51.1662025,
+    "tags": {
+      "addr:housenumber": "1440",
+      "addr:postcode": "91330-390",
+      "addr:street": "Avenida Teixeira Mendes",
+      "description": "Na Divina Padoca, além dos produtos em exposição, você pode pedir pelo combo de café da manhã, que serve duas pessoas e é oferecido a qualquer hora do dia.",
+      "name": "Divina Padoca",
+      "opening_hours": "Mo-Sa 07:00-20:30",
+      "phone": "+55 51 3391-0090",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6261015127,
+    "lat": -30.0598297,
+    "lon": -51.217968,
+    "tags": {
+      "addr:housenumber": "175",
+      "addr:postcode": "90160-230",
+      "addr:street": "Rua Paes de Andrade",
+      "name": "Pão da Nona",
+      "opening_hours": "Mo-Su 07:00-20:30",
+      "phone": "+55 51 3233-3599",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6261017096,
+    "lat": -30.0253563,
+    "lon": -51.2036743,
+    "tags": {
+      "addr:housenumber": "171",
+      "addr:postcode": "90570-080",
+      "addr:street": "Rua Padre Chagas",
+      "description": "A loja, dividida em açougue, hortifrúti, fiambreria e mercearia, também tem uma seleção bem legal de pães. A padaria fica nos fundos e, se você pedir, eles preparam sanduíches saborosos.",
+      "name": "Armazém dos Importados",
+      "opening_hours": "Mo-Sa 09:29-20:29",
+      "phone": "+55 51 3026-1800",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6261017478,
+    "lat": -30.1061649,
+    "lon": -51.2540627,
+    "tags": {
+      "addr:housenumber": "2013",
+      "addr:postcode": "91900-000",
+      "addr:street": "Avenida Wenceslau Escobar",
+      "description": "Conhecida por quem frequenta a Zona Sul da cidade, a Bassani é uma daquelas padarias clássicas, perfeitas para um café da manhã completo. Vale a pena experimentar o pão francês integral.",
+      "name": "Bassani",
+      "opening_hours": "Mo-Sa 07:00-20:00",
+      "phone": "+55 51 3072-8200",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6261018289,
+    "lat": -30.0496902,
+    "lon": -51.2033501,
+    "tags": {
+      "addr:housenumber": "1901",
+      "addr:postcode": "90640-001",
+      "addr:street": "Rua Vicente da Fontoura",
+      "description": "A padaria e mercearia é de dar água na boca em qualquer um. Todos os ingredientes encontrados são frescos e muito deliciosos. No cardápio, estão bolos, pães, salgados e cafés.",
+      "name": "A sua Mercê",
+      "opening_hours": "Mo-Sa 10:00-18:30",
+      "phone": "+55 51 3574-1091",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6356212078,
+    "lat": -30.0347227,
+    "lon": -51.2253813,
+    "tags": {
+      "addr:housenumber": "304",
+      "addr:street": "Avenida Desembargador André da Rocha",
+      "name": "Água na Boca",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6384071720,
+    "lat": -30.0588969,
+    "lon": -51.1740169,
+    "tags": {
+      "name": "Bauducco",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6602932094,
+    "lat": -30.0434214,
+    "lon": -51.1872335,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "2198",
+      "addr:street": "Avenida Protásio Alves",
+      "addr:suburb": "Petrópolis",
+      "name": "Padaria e Confeitaria Q Delícia",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7141988195,
+    "lat": -30.0387516,
+    "lon": -51.2118568,
+    "tags": {
+      "addr:housenumber": "877",
+      "addr:postcode": "90040-193",
+      "addr:street": "Avenida Venâncio Aires",
+      "name": "Doceria Chique",
+      "opening_hours": "Mo-Sa 10:00-19:00",
+      "phone": "+55 51 98478-1357",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7214267435,
+    "lat": -30.0452221,
+    "lon": -51.2210287,
+    "tags": {
+      "name": "Pães da Lilica",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7215396347,
+    "lat": -30.0301609,
+    "lon": -51.2299004,
+    "tags": {
+      "addr:housenumber": "326",
+      "addr:postcode": "90010-230",
+      "addr:street": "Rua General Câmara",
+      "name": "Oz Australian Pie",
+      "opening_hours": "Mo-Fr 10:00-18:00",
+      "phone": "+55 51 98926-6534",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9281091908,
+    "lat": -30.0232448,
+    "lon": -51.2030303,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "148",
+      "addr:postcode": "90570-050",
+      "addr:street": "Rua Dinarte Ribeiro",
+      "addr:suburb": "Moinhos de Vento",
+      "name": "Levain Casa Prado",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11183812668,
+    "lat": -30.0350883,
+    "lon": -51.2109519,
+    "tags": {
+      "addr:city": "Porto Alegre",
+      "addr:housenumber": "620",
+      "addr:postcode": "90035-090",
+      "addr:street": "Rua Fernandes Vieira",
+      "addr:suburb": "Bom Fim",
+      "description": "A Super Nova é uma padaria artesanal, onde o pão é feito à mão, com ingredientes locais e um toque de amor.",
+      "name": "Super Nova Padaria Artesanal",
+      "opening_hours": "Mo-Su 11:45-19:00; Tu off",
+      "shop": "bakery"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13653638154,
+    "lat": -30.0294369,
+    "lon": -51.2209429,
+    "tags": {
+      "name": "Roquete",
+      "shop": "bakery"
+    }
+  }
+]

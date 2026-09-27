@@ -42,6 +42,7 @@ export const imoveis = pgTable('imoveis', {
 
 export const pontosInteresse = pgTable('pontos_interesse', {
   id: serial('id').primaryKey(),
+  hashId: varchar('hash_id', { length: 64 }).unique(),
   nome: varchar('nome', { length: 255 }).notNull(),
   categoria: varchar('categoria', { length: 50 }).notNull(), // 'parque', 'referencia_pessoal', 'supermercado', 'farmacia', 'padaria'
   origem: varchar('origem', { length: 20 }).notNull().default('osm'), // 'manual', 'osm'

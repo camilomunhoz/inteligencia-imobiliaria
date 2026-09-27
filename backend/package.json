@@ -13,7 +13,8 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "test:db": "tsx src/db/test-connection.ts",
-    "test:fase1": "tsx src/db/test-fase1.ts"
+    "test:fase1": "tsx src/db/test-fase1.ts",
+    "seed:pois": "tsx src/scripts/seed-pois.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
