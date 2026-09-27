@@ -117,6 +117,12 @@ inteligencia-imobiliaria/
 
 ### 5.1 Execução com Docker Compose (Completa)
 
+Para preparar os dados viários do OSRM para Porto Alegre (caso ainda não tenha gerado os índices):
+
+```bash
+npm run osrm:setup
+```
+
 Para subir todos os serviços orquestrados (Banco PostGIS, Backend Fastify, Frontend Nginx e Roteador OSRM):
 
 ```bash
@@ -126,7 +132,9 @@ docker compose up -d
 * **Frontend:** `http://localhost:3000`
 * **Backend API:** `http://localhost:3001`
 * **PostgreSQL:** porta `5433` (mapeada para `5432` no container)
-* **OSRM:** porta `5000`
+* **OSRM:** porta `5000` (roteamento viário real com fallback geodésico resiliente)
+
+> **Nota para desenvolvimento:** Para rodar com hot-reload (tsx watch) e código montado como volume no backend, utilize `docker-compose.override.yml.example` renomeando-o para `docker-compose.override.yml`.
 
 ---
 

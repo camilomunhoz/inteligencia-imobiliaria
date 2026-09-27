@@ -17,6 +17,7 @@
     "seed:pois": "npm --prefix backend run seed:pois",
     "seed:imoveis": "npm --prefix backend run seed:imoveis",
     "pois:import": "npm --prefix backend run pois:import",
-    "pois:status": "npm --prefix backend run pois:status"
+    "pois:status": "npm --prefix backend run pois:status",
+    "osrm:setup": "node scripts/setup-osrm.js"
   }
 }

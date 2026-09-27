@@ -6,3 +6,6 @@ build/
 .DS_Store
 coverage/
 pgdata/
+osrm-data/
+*.osrm*
+*.pbf
