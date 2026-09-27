@@ -14,7 +14,9 @@
     "db:studio": "drizzle-kit studio",
     "test:db": "tsx src/db/test-connection.ts",
     "test:fase1": "tsx src/db/test-fase1.ts",
-    "seed:pois": "tsx src/scripts/seed-pois.ts"
+    "seed:pois": "tsx src/scripts/seed-pois.ts",
+    "pois:import": "tsx src/scripts/import-pois.ts",
+    "pois:status": "tsx src/scripts/status-pois.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
