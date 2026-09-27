@@ -1,6 +1,6 @@
 # Inteligência Imobiliária — Porto Alegre (RS)
 
-Plataforma de inteligência de mercado, análise espacial e scoring multicritério de imóveis residenciais (Venda e Aluguel) em Porto Alegre, integrando PostgreSQL/PostGIS, IA local (Ollama Qwen 2.5), roteamento viário OSRM e visualização interativa com MapLibre GL.
+Plataforma de inteligência de mercado, análise espacial e scoring multicritério de imóveis residenciais (Venda e Aluguel) em Porto Alegre, integrando PostgreSQL/PostGIS, IA local via Ollama (modelo de livre escolha do usuário, com indicação de `qwen2.5:7b`), roteamento viário OSRM e visualização interativa com MapLibre GL.
 
 ---
 
@@ -14,7 +14,7 @@ Plataforma de inteligência de mercado, análise espacial e scoring multicritér
 * **Roteamento Urbano:** OSRM (Open Source Routing Machine) com perfis a pé e carro, apoiado por fallback geodésico resiliente via Haversine / `ST_Distance`.
 
 ### IA & Ingestão
-* **IA Local:** Ollama rodando `qwen2.5:7b` com schema JSON estrito para extração de tipologia, valores, condomínio, IPTU, orientação solar e confiabilidade.
+* **IA Local (Modelo Configurável pelo Usuário):** Integração com Ollama onde o usuário escolhe livremente qual LLM utilizar via variável `OLLAMA_MODEL`. O sistema utiliza schema JSON estrito para extração de tipologia, valores, condomínio, IPTU, orientação solar e grau de confiança. Sugerimos como referência o `qwen2.5:7b` pelo equilíbrio entre consumo de VRAM e precisão em JSON, mas modelos como `llama3.1:8b`, `mistral`, `deepseek-r1:8b` ou `qwen2.5:14b` são plenamente suportados.
 * **Scraping:** Playwright em modo stealth com fila de rate-limiting e controle de concorrência.
 * **Higienização DOM:** Mozilla Readability + JSDOM + Turndown para extração de Markdown limpo e URLs de fotos.
 * **Geocodificação:** OpenStreetMap Nominatim com fallback para centroides de bairros de Porto Alegre.
@@ -65,7 +65,7 @@ inteligencia-imobiliaria/
 │   │   │   ├── geocoder.ts          # Nominatim / centroid POA
 │   │   │   ├── image-storage.ts     # Download e cache local de fotos
 │   │   │   ├── imoveis.ts           # Orquestrador de ingestão e deduplicação
-│   │   │   ├── llm.ts               # Interface Ollama (Qwen 2.5) com schema estrito
+│   │   │   ├── llm.ts               # Interface Ollama (modelo configurável) com schema estrito
 │   │   │   ├── osrm.ts              # Roteamento viário OSRM com fallback geodésico
 │   │   │   ├── queue.ts             # Fila de tarefas com rate-limiting
 │   │   │   ├── scraper.ts           # Playwright stealth
@@ -100,9 +100,15 @@ inteligencia-imobiliaria/
 
 1. **Node.js:** versão 20.x ou superior.
 2. **PostgreSQL 16 + PostGIS 3.4:** executando via Docker ou nativamente.
-3. **Ollama:** instalado e executando localmente (`http://localhost:11434`) com o modelo baixado:
+3. **Ollama:** instalado e executando localmente (`http://localhost:11434`). O modelo de IA é de livre escolha do usuário, definido pela variável `OLLAMA_MODEL` no arquivo `.env` (o padrão indicado é o `qwen2.5:7b` pelo equilíbrio entre fidelidade ao schema JSON e baixo consumo de VRAM):
    ```bash
+   # Indicação sugerida:
    ollama pull qwen2.5:7b
+
+   # Ou qualquer outro modelo de sua preferência com suporte a JSON:
+   # ollama pull llama3.1:8b
+   # ollama pull mistral
+   # ollama pull qwen2.5:14b
    ```
 
 ---
