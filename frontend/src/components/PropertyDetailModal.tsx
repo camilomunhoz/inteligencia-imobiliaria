@@ -17,12 +17,14 @@ import {
   Loader2,
   History,
   AlertTriangle,
+  Trash2,
 } from 'lucide-react';
 
 interface PropertyDetailModalProps {
   imovel: Imovel | null;
   onClose: () => void;
   onPropertyUpdated?: () => void;
+  onDelete?: (imovel: Imovel) => void;
 }
 
 interface HistoricoItem {
@@ -39,6 +41,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
   imovel,
   onClose,
   onPropertyUpdated,
+  onDelete,
 }) => {
   const [historico, setHistorico] = useState<HistoricoItem[]>([]);
   const [loadingHistory, setLoadingHistory] = useState(false);
@@ -476,21 +479,35 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
             </div>
           </div>
 
-          {/* Footer com link original */}
-          <div className="mt-6 flex items-center justify-between border-t pt-4">
-            <button
-              type="button"
-              onClick={onClose}
-              className="rounded-lg border px-4 py-2 text-xs font-semibold text-foreground hover:bg-muted"
-            >
-              Fechar
-            </button>
+          {/* Footer com link original e exclusão */}
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-border/60 pt-4">
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={onClose}
+                className="rounded-lg border border-border bg-background px-4 py-2 text-xs font-semibold text-foreground hover:bg-muted transition-colors"
+              >
+                Fechar
+              </button>
+
+              {onDelete && (
+                <button
+                  type="button"
+                  onClick={() => onDelete(imovel)}
+                  className="flex items-center gap-1.5 rounded-lg border border-rose-200 dark:border-rose-900/60 bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-xs font-semibold text-rose-600 dark:text-rose-300 hover:bg-rose-100 dark:hover:bg-rose-900/60 transition-colors"
+                >
+                  <Trash2 className="h-3.5 w-3.5" />
+                  <span>Excluir</span>
+                </button>
+              )}
+            </div>
+
             {imovel.url_origem && (
               <a
                 href={imovel.url_origem}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground shadow-sm hover:bg-primary/90"
+                className="flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors"
               >
                 <span>Acessar Anúncio Original</span>
                 <ExternalLink className="h-3.5 w-3.5" />

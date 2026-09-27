@@ -1,12 +1,13 @@
 import React from 'react';
 import { type Imovel } from '../types/imovel.js';
-import { MapPin, Sun, Compass, ShoppingBag, ArrowUpRight } from 'lucide-react';
+import { MapPin, Sun, Compass, ShoppingBag, ArrowUpRight, Trash2 } from 'lucide-react';
 
 interface PropertyCardProps {
   imovel: Imovel;
   isSelected?: boolean;
   onSelect: (imovel: Imovel) => void;
   onHover?: (imovel: Imovel | null) => void;
+  onDelete?: (imovel: Imovel) => void;
 }
 
 export const PropertyCard: React.FC<PropertyCardProps> = ({
@@ -14,6 +15,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
   isSelected,
   onSelect,
   onHover,
+  onDelete,
 }) => {
   const isVenda = imovel.tipo_transacao === 'venda';
   const mainImage = imovel.imagens?.[0] || 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80';
@@ -145,18 +147,37 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
           </div>
         </div>
 
-        {imovel.url_origem && (
-          <a
-            href={imovel.url_origem}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="mt-2.5 inline-flex items-center justify-center gap-1 text-[11px] text-muted-foreground hover:text-primary transition-colors"
-          >
-            <span>Ver anúncio original</span>
-            <ArrowUpRight className="h-3 w-3" />
-          </a>
-        )}
+        {/* Ações inferiores: Link original e Botão de Deletar */}
+        <div className="mt-2.5 flex items-center justify-between border-t border-border/40 pt-2">
+          {imovel.url_origem ? (
+            <a
+              href={imovel.url_origem}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-1 text-[11px] text-muted-foreground hover:text-primary transition-colors"
+            >
+              <span>Ver anúncio original</span>
+              <ArrowUpRight className="h-3 w-3" />
+            </a>
+          ) : (
+            <div />
+          )}
+
+          {onDelete && (
+            <button
+              type="button"
+              title="Excluir este imóvel e imagens"
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete(imovel);
+              }}
+              className="flex items-center gap-1 rounded-md p-1 text-[11px] text-muted-foreground hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition-colors"
+            >
+              <Trash2 className="h-3.5 w-3.5" />
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

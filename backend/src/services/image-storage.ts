@@ -73,3 +73,17 @@ export async function downloadListingImages(
 
   return downloadedUrls;
 }
+
+/**
+ * Remove permanentemente o diretório local de imagens associado a um imóvel.
+ */
+export async function deleteListingImages(imovelId: number): Promise<void> {
+  try {
+    const dir = path.join(UPLOADS_DIR, 'imoveis', String(imovelId));
+    if (fs.existsSync(dir)) {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
+  } catch (err) {
+    console.error(`Erro ao remover imagens locais do imóvel ${imovelId}:`, err);
+  }
+}

@@ -4,6 +4,7 @@ import { PropertyCard } from './components/PropertyCard.js';
 import { Map } from './components/Map.js';
 import { ImportModal } from './components/ImportModal.js';
 import { PropertyDetailModal } from './components/PropertyDetailModal.js';
+import { DeleteConfirmModal } from './components/DeleteConfirmModal.js';
 import {
   WeightSliders,
   DEFAULT_WEIGHTS,
@@ -28,6 +29,7 @@ export const App: React.FC = () => {
   const [selectedImovel, setSelectedImovel] = useState<Imovel | null>(null);
   const [hoveredImovel, setHoveredImovel] = useState<Imovel | null>(null);
   const [detailImovel, setDetailImovel] = useState<Imovel | null>(null);
+  const [imovelToDelete, setImovelToDelete] = useState<Imovel | null>(null);
   const [isImportModalOpen, setIsImportModalOpen] = useState<boolean>(false);
   const [isSlidersOpen, setIsSlidersOpen] = useState<boolean>(false);
   const [sortBy, setSortBy] = useState<'score' | 'preco_asc' | 'preco_desc'>('score');
@@ -90,6 +92,13 @@ export const App: React.FC = () => {
       setIsLoading(false);
     }
   }, [tipoTransacao]);
+
+  const handleDeleteSuccess = (deletedId: number) => {
+    setImoveis((prev) => prev.filter((item) => item.id !== deletedId));
+    if (selectedImovel?.id === deletedId) setSelectedImovel(null);
+    if (detailImovel?.id === deletedId) setDetailImovel(null);
+    setImovelToDelete(null);
+  };
 
   useEffect(() => {
     fetchImoveis();
@@ -311,6 +320,7 @@ export const App: React.FC = () => {
                       setDetailImovel(item);
                     }}
                     onHover={(item) => setHoveredImovel(item)}
+                    onDelete={(item) => setImovelToDelete(item)}
                   />
                 ))}
               </div>
@@ -351,6 +361,15 @@ export const App: React.FC = () => {
         imovel={detailImovel}
         onClose={() => setDetailImovel(null)}
         onPropertyUpdated={() => fetchImoveis()}
+        onDelete={(item) => setImovelToDelete(item)}
+      />
+
+      {/* Diálogo de Confirmação de Exclusão */}
+      <DeleteConfirmModal
+        isOpen={!!imovelToDelete}
+        imovel={imovelToDelete}
+        onClose={() => setImovelToDelete(null)}
+        onSuccess={handleDeleteSuccess}
       />
     </div>
   );

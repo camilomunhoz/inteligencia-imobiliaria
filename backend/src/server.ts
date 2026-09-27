@@ -14,6 +14,7 @@ import {
   getImovelScoreById,
 } from './services/scoring.js';
 import { getRoute } from './services/osrm.js';
+import { deleteListingImages } from './services/image-storage.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -390,6 +391,36 @@ export function buildServer(): FastifyInstance {
     return {
       success: true,
       message: 'Imóvel revisado e atualizado com sucesso.',
+      id,
+    };
+  });
+
+  // Exclusão de imóvel e remoção física de imagens locais associadas
+  app.delete<{ Params: { id: string } }>('/imoveis/:id', async (request, reply) => {
+    const id = parseInt(request.params.id, 10);
+    if (isNaN(id)) {
+      return reply.status(400).send({ error: 'ID inválido.' });
+    }
+
+    const checkResult = await db.execute(sql`
+      SELECT id FROM imoveis WHERE id = ${id};
+    `);
+
+    if (checkResult.rows.length === 0) {
+      return reply.status(404).send({ error: 'Imóvel não encontrado.' });
+    }
+
+    // Deleta do banco de dados (o cascade cuidará de imoveis_historico_preco)
+    await db.execute(sql`
+      DELETE FROM imoveis WHERE id = ${id};
+    `);
+
+    // Deleta o diretório local de imagens do imóvel
+    await deleteListingImages(id);
+
+    return {
+      success: true,
+      message: 'Imóvel e imagens associadas removidos com sucesso.',
       id,
     };
   });

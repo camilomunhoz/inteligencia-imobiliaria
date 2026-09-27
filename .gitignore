@@ -10,3 +10,8 @@ osrm-data/
 *.osrm*
 *.pbf
 docker-compose.override.yml
+
+# Uploads de imagens
+uploads/
+**/public/uploads/*
+!**/public/uploads/.gitkeep

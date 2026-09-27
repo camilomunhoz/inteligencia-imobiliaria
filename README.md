@@ -221,6 +221,7 @@ npm run pois:import -- --preset=hospitais
 | `POST` | `/imoveis/importar-stream` | Ingestão com streaming Server-Sent Events em tempo real |
 | `GET` | `/imoveis/revisao` | Lista anúncios pendentes de revisão manual |
 | `PUT` | `/imoveis/:id/revisao` | Atualização manual de dados do imóvel e gravação no histórico |
+| `DELETE` | `/imoveis/:id` | Exclusão do imóvel, histórico e remoção de imagens locais em disco |
 | `GET` | `/pois` | GeoJSON FeatureCollection de POIs com filtro opcional `?categoria=...` |
 | `GET` | `/rotas` | Traçado viário OSRM com fallback (`origemLng`, `origemLat`, `destinoLng`, `destinoLat`, `perfil=pe\|carro`) |
 | `GET` | `/pesos` | Lista de perfis de pesos padrão salvos no banco |
