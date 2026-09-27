@@ -9,3 +9,4 @@ pgdata/
 osrm-data/
 *.osrm*
 *.pbf
+docker-compose.override.yml
