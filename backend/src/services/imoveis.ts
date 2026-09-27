@@ -6,6 +6,10 @@ import { cleanHtml } from './cleaner.js';
 import { extractWithOllama } from './llm.js';
 import { geocodeAddress } from './geocoder.js';
 
+export interface ProgressCallback {
+  (step: string, status: 'running' | 'done' | 'error', message: string, details?: unknown): void;
+}
+
 export interface ImportResult {
   success: boolean;
   action?: 'criado' | 'historico_atualizado';
@@ -15,10 +19,24 @@ export interface ImportResult {
   detalhes?: unknown;
 }
 
-export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
+export async function importarImovelPorUrl(
+  url: string,
+  onProgress?: ProgressCallback
+): Promise<ImportResult> {
+  const notify = (step: string, status: 'running' | 'done' | 'error', message: string, details?: unknown) => {
+    if (onProgress) {
+      try {
+        onProgress(step, status, message, details);
+      } catch {
+        // Ignorar erros no callback
+      }
+    }
+  };
+
   const trimmedUrl = url.trim();
 
   if (!trimmedUrl.startsWith('http://') && !trimmedUrl.startsWith('https://')) {
+    notify('validacao', 'error', 'URL inválida. A URL deve iniciar com http:// ou https://');
     return {
       success: false,
       error: 'URL inválida. A URL deve iniciar com http:// ou https://',
@@ -27,6 +45,7 @@ export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
   }
 
   // 1. Checar deduplicação por url_origem
+  notify('deduplicacao', 'running', 'Verificando existência do anúncio no banco de dados...');
   console.log(`[Importador] Verificando existência de ${trimmedUrl} no banco...`);
   const existente = await db
     .select()
@@ -34,25 +53,40 @@ export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
     .where(eq(imoveis.urlOrigem, trimmedUrl))
     .limit(1);
 
+  if (existente.length > 0) {
+    notify('deduplicacao', 'done', `Imóvel existente detectado (ID #${existente[0].id}). O histórico de preços será atualizado.`);
+  } else {
+    notify('deduplicacao', 'done', 'Imóvel inédito identificado no sistema.');
+  }
+
   // 2. Executar Raspagem com Playwright
+  notify('scraping', 'running', 'Abrindo navegador Playwright em modo stealth e carregando página...');
   const scrapeResult = await scrapeUrl(trimmedUrl);
   if (!scrapeResult.success || !scrapeResult.html) {
+    const errMsg = scrapeResult.error || 'Falha ao raspar a página do anúncio.';
+    notify('scraping', 'error', errMsg, { errorCode: scrapeResult.errorCode });
     return {
       success: false,
-      error: scrapeResult.error || 'Falha ao raspar a página do anúncio.',
+      error: errMsg,
       errorCode: scrapeResult.errorCode || 'SCRAPE_FAILED',
     };
   }
+  notify('scraping', 'done', 'Conteúdo HTML da página obtido com sucesso.');
 
   // 3. Limpeza HTML -> Markdown limpo + imagens
+  notify('limpeza', 'running', 'Higienizando DOM com Readability e gerando Markdown limpo...');
   const cleaned = cleanHtml(scrapeResult.html, trimmedUrl);
+  notify('limpeza', 'done', `Higienização concluída: ${cleaned.images.length} fotos e texto estruturado extraídos.`);
 
   // 4. Extração estruturada com Ollama (Qwen 2.5)
+  notify('llm', 'running', 'IA Local (Qwen 2.5) analisando valores, condomínio, IPTU e orientação solar...');
   let extracted;
   try {
     extracted = await extractWithOllama(cleaned.markdown, cleaned.title);
+    notify('llm', 'done', `IA concluiu extração (${extracted.tipo_transacao.toUpperCase()} - Confiança: ${extracted.confianca_extracao}).`);
   } catch (llmError: unknown) {
     const err = llmError as Error;
+    notify('llm', 'error', `Falha no processamento com LLM: ${err.message}`, { errorCode: 'LLM_ERROR' });
     return {
       success: false,
       error: `Falha no processamento com LLM: ${err.message}`,
@@ -73,6 +107,7 @@ export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
   // 6. Se o imóvel já existia, atualizar apenas preço e histórico
   if (existente.length > 0) {
     const imovelExistente = existente[0];
+    notify('persistencia', 'running', `Gravando nova cotação de ${tipoTransacao} no histórico do imóvel #${imovelExistente.id}...`);
     console.log(`[Importador] Imóvel já cadastrado (ID ${imovelExistente.id}). Gravando novo preço no histórico...`);
 
     // Inserir novo histórico de preço
@@ -100,6 +135,7 @@ export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
       .where(eq(imoveis.id, imovelExistente.id))
       .returning();
 
+    notify('persistencia', 'done', 'Histórico de preços atualizado com sucesso.');
     return {
       success: true,
       action: 'historico_atualizado',
@@ -111,9 +147,19 @@ export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
   }
 
   // 7. Geocodificação
-  const geocode = await geocodeAddress(extracted.endereco, extracted.bairro);
+  notify('geocoding', 'running', `Localizando coordenadas geográficas para "${extracted.endereco}", Bairro ${extracted.bairro}...`);
+  let geocode;
+  try {
+    geocode = await geocodeAddress(extracted.endereco, extracted.bairro);
+    notify('geocoding', 'done', `Geocodificação concluída via ${geocode.fonte}: (${geocode.lat.toFixed(4)}, ${geocode.lng.toFixed(4)}).`);
+  } catch (geoError: unknown) {
+    const err = geoError as Error;
+    notify('geocoding', 'error', `Falha ao geocodificar: ${err.message}`);
+    throw err;
+  }
 
   // 8. Persistir novo imóvel no PostgreSQL com PostGIS Point
+  notify('persistencia', 'running', 'Persistindo imóvel no PostgreSQL e calculando relacionamentos espaciais PostGIS...');
   console.log(`[Importador] Gravando novo imóvel (${tipoTransacao}) no banco...`);
   const inserted = await db.execute(sql`
     INSERT INTO imoveis (
@@ -165,6 +211,8 @@ export async function importarImovelPorUrl(url: string): Promise<ImportResult> {
     iptu: String(iptu),
     custoTotalMensal: custoTotalMensal ? String(custoTotalMensal) : null,
   });
+
+  notify('persistencia', 'done', `Imóvel #${novoImovel.id} cadastrado com sucesso.`);
 
   return {
     success: true,

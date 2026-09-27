@@ -66,6 +66,64 @@ export function buildServer(): FastifyInstance {
     }
   });
 
+  // Importar imóvel com streaming de progresso em tempo real (Server-Sent Events)
+  app.post<{ Body: { url: string } }>('/imoveis/importar-stream', async (request, reply) => {
+    const { url } = request.body || {};
+
+    if (!url || typeof url !== 'string') {
+      return reply.status(400).send({
+        success: false,
+        error: 'O campo "url" é obrigatório no corpo da requisição.',
+        errorCode: 'MISSING_URL',
+      });
+    }
+
+    reply.raw.writeHead(200, {
+      'Content-Type': 'text/event-stream',
+      'Cache-Control': 'no-cache, no-transform',
+      'Connection': 'keep-alive',
+      'X-Accel-Buffering': 'no',
+    });
+
+    const sendEvent = (data: Record<string, unknown>) => {
+      reply.raw.write(`data: ${JSON.stringify(data)}\n\n`);
+    };
+
+    try {
+      const result = await importarImovelPorUrl(url, (step, status, message, details) => {
+        sendEvent({
+          step,
+          status,
+          message,
+          details,
+          timestamp: new Date().toISOString(),
+        });
+      });
+
+      sendEvent({
+        step: 'conclusao',
+        status: result.success ? 'done' : 'error',
+        message: result.success
+          ? (result.action === 'criado' ? 'Novo imóvel cadastrado com sucesso!' : 'Histórico de preços atualizado com sucesso!')
+          : (result.error || 'Falha na ingestão do anúncio.'),
+        result,
+        timestamp: new Date().toISOString(),
+      });
+    } catch (error: unknown) {
+      const err = error as Error;
+      request.log.error(err);
+      sendEvent({
+        step: 'erro',
+        status: 'error',
+        message: `Erro interno: ${err.message}`,
+        errorCode: 'INTERNAL_SERVER_ERROR',
+        timestamp: new Date().toISOString(),
+      });
+    } finally {
+      reply.raw.end();
+    }
+  });
+
   // Listar imóveis já com scoring calculado e particionado por tipo de transação
   app.get<{ Querystring: { tipo?: string } }>('/imoveis', async (request) => {
     const tipo = request.query.tipo?.toLowerCase() as 'venda' | 'aluguel' | undefined;
