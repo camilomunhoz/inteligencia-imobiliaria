@@ -1,5 +1,9 @@
 import Fastify, { type FastifyInstance } from 'fastify';
 import cors from '@fastify/cors';
+import fastifyStatic from '@fastify/static';
+import path from 'node:path';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { sql } from 'drizzle-orm';
 import { db } from './db/index.js';
 import { importarImovelPorUrl } from './services/imoveis.js';
@@ -10,6 +14,13 @@ import {
   getImovelScoreById,
 } from './services/scoring.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const uploadsDir = path.resolve(__dirname, '../public/uploads');
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
 export function buildServer(): FastifyInstance {
   const app = Fastify({
     logger: true,
@@ -17,6 +28,11 @@ export function buildServer(): FastifyInstance {
 
   app.register(cors, {
     origin: true,
+  });
+
+  app.register(fastifyStatic, {
+    root: uploadsDir,
+    prefix: '/uploads/',
   });
 
   // Health check
@@ -276,6 +292,104 @@ export function buildServer(): FastifyInstance {
     const res = await db.execute(sql`SELECT * FROM pesos_configuracao ORDER BY id ASC;`);
     return {
       perfis: res.rows,
+    };
+  });
+
+  // Imóveis pendentes de revisão manual (baixa confiança ou dados incompletos)
+  app.get('/imoveis/revisao', async () => {
+    const res = await db.execute(sql`
+      SELECT
+        id,
+        url_origem,
+        tipo_transacao,
+        titulo,
+        preco,
+        condominio,
+        iptu,
+        custo_total_mensal,
+        area_util,
+        preco_m2,
+        endereco,
+        bairro,
+        posicao_solar,
+        confianca_extracao,
+        comentario_ia,
+        criado_em
+      FROM imoveis
+      WHERE confianca_extracao = 'baixa'
+         OR preco IS NULL
+         OR area_util IS NULL
+         OR area_util = 0
+      ORDER BY id DESC;
+    `);
+    return {
+      total: res.rows.length,
+      imoveis: res.rows,
+    };
+  });
+
+  // Atualização de revisão manual de imóvel
+  app.put<{
+    Params: { id: string };
+    Body: {
+      preco?: number;
+      condominio?: number;
+      iptu?: number;
+      area_util?: number;
+      posicao_solar?: string;
+      confianca_extracao?: 'baixa' | 'media' | 'alta';
+      titulo?: string;
+    };
+  }>('/imoveis/:id/revisao', async (request, reply) => {
+    const id = parseInt(request.params.id, 10);
+    if (isNaN(id)) return reply.status(400).send({ error: 'ID inválido.' });
+
+    const currentRes = await db.execute(sql`SELECT * FROM imoveis WHERE id = ${id};`);
+    if (currentRes.rows.length === 0) {
+      return reply.status(404).send({ error: 'Imóvel não encontrado.' });
+    }
+    const current = currentRes.rows[0] as any;
+
+    const b = request.body || {};
+    const preco = b.preco !== undefined ? Number(b.preco) : Number(current.preco);
+    const condominio = b.condominio !== undefined ? Number(b.condominio) : Number(current.condominio || 0);
+    const iptu = b.iptu !== undefined ? Number(b.iptu) : Number(current.iptu || 0);
+    const areaUtil = b.area_util !== undefined ? Number(b.area_util) : Number(current.area_util);
+    const posicaoSolar = b.posicao_solar !== undefined ? b.posicao_solar : current.posicao_solar;
+    const confianca = b.confianca_extracao !== undefined ? b.confianca_extracao : 'alta';
+    const titulo = b.titulo !== undefined ? b.titulo : current.titulo;
+
+    const precoM2 = areaUtil > 0 ? Number((preco / areaUtil).toFixed(2)) : null;
+    const custoTotalMensal = current.tipo_transacao === 'aluguel' ? Number((preco + condominio + iptu).toFixed(2)) : preco;
+
+    await db.execute(sql`
+      UPDATE imoveis
+      SET
+        preco = ${preco},
+        condominio = ${condominio},
+        iptu = ${iptu},
+        area_util = ${areaUtil},
+        preco_m2 = ${precoM2},
+        custo_total_mensal = ${custoTotalMensal},
+        posicao_solar = ${posicaoSolar},
+        confianca_extracao = ${confianca},
+        titulo = ${titulo},
+        atualizado_em = NOW()
+      WHERE id = ${id};
+    `);
+
+    // Inserir no histórico de preços se o preço tiver mudado
+    if (b.preco !== undefined && Number(b.preco) !== Number(current.preco)) {
+      await db.execute(sql`
+        INSERT INTO imoveis_historico_preco (imovel_id, tipo_transacao, preco, condominio, iptu, custo_total_mensal)
+        VALUES (${id}, ${current.tipo_transacao}, ${preco}, ${condominio}, ${iptu}, ${custoTotalMensal});
+      `);
+    }
+
+    return {
+      success: true,
+      message: 'Imóvel revisado e atualizado com sucesso.',
+      id,
     };
   });
 

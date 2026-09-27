@@ -18,6 +18,7 @@
     "test:fase4": "tsx src/scripts/test-fase4.ts",
     "test:fase5": "tsx src/scripts/test-fase5.ts",
     "test:fase6": "tsx src/scripts/test-fase6.ts",
+    "test:fase7": "tsx src/scripts/test-fase7.ts",
     "seed:pois": "tsx src/scripts/seed-pois.ts",
     "seed:imoveis": "tsx src/scripts/seed-sample-imoveis.ts",
     "pois:import": "tsx src/scripts/import-pois.ts",
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "@fastify/cors": "^11.3.0",
+    "@fastify/static": "^10.1.5",
     "@mozilla/readability": "^0.6.0",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.38.4",

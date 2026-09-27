@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { type Imovel } from '../types/imovel.js';
 import {
@@ -11,17 +11,72 @@ import {
   Sparkles,
   TrendingDown,
   Car,
+  Calendar,
+  Edit3,
+  Check,
+  Loader2,
+  History,
+  AlertTriangle,
 } from 'lucide-react';
 
 interface PropertyDetailModalProps {
   imovel: Imovel | null;
   onClose: () => void;
+  onPropertyUpdated?: () => void;
+}
+
+interface HistoricoItem {
+  id: number;
+  tipo_transacao: string;
+  preco: string;
+  condominio?: string;
+  iptu?: string;
+  custo_total_mensal?: string;
+  capturado_em: string;
 }
 
 export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
   imovel,
   onClose,
+  onPropertyUpdated,
 }) => {
+  const [historico, setHistorico] = useState<HistoricoItem[]>([]);
+  const [loadingHistory, setLoadingHistory] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [savingEdit, setSavingEdit] = useState(false);
+  const [editSuccess, setEditSuccess] = useState(false);
+
+  // Campos de edição manual
+  const [editPreco, setEditPreco] = useState<number>(0);
+  const [editCondominio, setEditCondominio] = useState<number>(0);
+  const [editIptu, setEditIptu] = useState<number>(0);
+  const [editArea, setEditArea] = useState<number>(0);
+  const [editPosicao, setEditPosicao] = useState<string>('Indefinido');
+
+  useEffect(() => {
+    if (!imovel) return;
+
+    setEditPreco(imovel.preco || 0);
+    setEditCondominio(imovel.condominio || 0);
+    setEditIptu(imovel.iptu || 0);
+    setEditArea(imovel.area_util || 0);
+    setEditPosicao(imovel.posicao_solar || 'Indefinido');
+    setIsEditing(false);
+    setEditSuccess(false);
+
+    // Buscar histórico temporal de preços
+    setLoadingHistory(true);
+    fetch(`/api/imoveis/${imovel.id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.historico_precos) {
+          setHistorico(data.historico_precos);
+        }
+      })
+      .catch((err) => console.error('Erro ao carregar histórico:', err))
+      .finally(() => setLoadingHistory(false));
+  }, [imovel]);
+
   if (!imovel) return null;
 
   const isVenda = imovel.tipo_transacao === 'venda';
@@ -47,6 +102,43 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
     if (score >= 6.0) return 'bg-blue-500';
     if (score >= 4.0) return 'bg-amber-500';
     return 'bg-rose-500';
+  };
+
+  const handleSaveManualReview = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSavingEdit(true);
+    setEditSuccess(false);
+
+    try {
+      const res = await fetch(`/api/imoveis/${imovel.id}/revisao`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          preco: editPreco,
+          condominio: editCondominio,
+          iptu: editIptu,
+          area_util: editArea,
+          posicao_solar: editPosicao,
+          confianca_extracao: 'alta', // Validação manual confirmada
+        }),
+      });
+
+      if (!res.ok) throw new Error('Falha ao salvar revisão.');
+
+      setEditSuccess(true);
+      setTimeout(() => {
+        setIsEditing(false);
+        setEditSuccess(false);
+        onPropertyUpdated?.();
+      }, 1000);
+    } catch (err) {
+      console.error(err);
+      alert('Erro ao atualizar os dados do imóvel.');
+    } finally {
+      setSavingEdit(false);
+    }
   };
 
   const subScoreItems = [
@@ -91,8 +183,8 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
   return (
     <Dialog.Root open={!!imovel} onOpenChange={(open) => !open && onClose()}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity" />
-        <Dialog.Content className="fixed left-1/2 top-1/2 z-50 max-h-[90vh] w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-xl border bg-card p-6 shadow-2xl focus:outline-none">
+        <Dialog.Overlay className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity" />
+        <Dialog.Content className="fixed left-1/2 top-1/2 z-50 max-h-[92vh] w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl border bg-card p-6 shadow-2xl focus:outline-none">
           {/* Header */}
           <div className="flex items-start justify-between border-b pb-4">
             <div className="pr-6">
@@ -101,6 +193,12 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                   {isVenda ? 'Venda' : 'Aluguel'}
                 </span>
                 <span className="text-xs text-muted-foreground">ID #{imovel.id}</span>
+                {imovel.confianca_extracao === 'baixa' && (
+                  <span className="flex items-center gap-1 rounded-md bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 px-2 py-0.5 text-[10px] font-semibold">
+                    <AlertTriangle className="h-3 w-3" />
+                    Pendente de Revisão
+                  </span>
+                )}
               </div>
               <Dialog.Title className="mt-2 text-xl font-bold leading-tight text-foreground">
                 {imovel.titulo}
@@ -122,7 +220,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
           </div>
 
           {/* Imagem Principal */}
-          <div className="mt-4 relative aspect-[16/9] w-full overflow-hidden rounded-lg bg-muted">
+          <div className="mt-4 relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-muted">
             <img
               src={mainImage}
               alt={imovel.titulo}
@@ -141,13 +239,106 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
             </div>
           </div>
 
-          {/* Financeiro Detalhado */}
+          {/* Financeiro Detalhado & Revisão Manual */}
           <div className="mt-5 rounded-xl border bg-secondary/30 p-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
-              Composição Financeira
-            </h4>
-            {isVenda ? (
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+            <div className="flex items-center justify-between mb-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                Composição Financeira
+              </h4>
+              <button
+                type="button"
+                onClick={() => setIsEditing(!isEditing)}
+                className="flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
+              >
+                <Edit3 className="h-3.5 w-3.5" />
+                <span>{isEditing ? 'Cancelar Edição' : 'Revisar / Ajustar Valores'}</span>
+              </button>
+            </div>
+
+            {isEditing ? (
+              <form onSubmit={handleSaveManualReview} className="space-y-3 pt-1">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div>
+                    <label className="text-[11px] font-semibold text-muted-foreground block mb-1">
+                      {isVenda ? 'Preço de Venda (R$)' : 'Aluguel Base (R$)'}
+                    </label>
+                    <input
+                      type="number"
+                      value={editPreco}
+                      onChange={(e) => setEditPreco(Number(e.target.value))}
+                      className="w-full rounded-lg border bg-background px-2.5 py-1.5 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="text-[11px] font-semibold text-muted-foreground block mb-1">
+                      Área Útil (m²)
+                    </label>
+                    <input
+                      type="number"
+                      value={editArea}
+                      onChange={(e) => setEditArea(Number(e.target.value))}
+                      className="w-full rounded-lg border bg-background px-2.5 py-1.5 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="text-[11px] font-semibold text-muted-foreground block mb-1">
+                      Condomínio (R$)
+                    </label>
+                    <input
+                      type="number"
+                      value={editCondominio}
+                      onChange={(e) => setEditCondominio(Number(e.target.value))}
+                      className="w-full rounded-lg border bg-background px-2.5 py-1.5 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-[11px] font-semibold text-muted-foreground block mb-1">
+                      IPTU Mensal (R$)
+                    </label>
+                    <input
+                      type="number"
+                      value={editIptu}
+                      onChange={(e) => setEditIptu(Number(e.target.value))}
+                      className="w-full rounded-lg border bg-background px-2.5 py-1.5 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                    />
+                  </div>
+                  <div className="col-span-2 sm:col-span-2">
+                    <label className="text-[11px] font-semibold text-muted-foreground block mb-1">
+                      Orientação Solar
+                    </label>
+                    <select
+                      value={editPosicao}
+                      onChange={(e) => setEditPosicao(e.target.value)}
+                      className="w-full rounded-lg border bg-background px-2.5 py-1.5 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer"
+                    >
+                      <option value="Norte">Norte (Excelente)</option>
+                      <option value="Leste">Leste (Sol da manhã)</option>
+                      <option value="Oeste">Oeste (Sol da tarde)</option>
+                      <option value="Sul">Sul (Sem sol direto)</option>
+                      <option value="Indefinido">Indefinido</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-end gap-2 pt-2 border-t">
+                  <button
+                    type="submit"
+                    disabled={savingEdit}
+                    className="flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground shadow-sm hover:bg-primary/90"
+                  >
+                    {savingEdit ? (
+                      <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                    ) : editSuccess ? (
+                      <Check className="h-3.5 w-3.5" />
+                    ) : null}
+                    <span>{editSuccess ? 'Salvo!' : 'Confirmar e Recalcular'}</span>
+                  </button>
+                </div>
+              </form>
+            ) : isVenda ? (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
                 <div className="rounded-lg bg-card p-3 border">
                   <span className="text-[11px] text-muted-foreground block">Valor de Venda</span>
                   <span className="text-base font-bold text-foreground">{formatCurrency(imovel.preco)}</span>
@@ -166,7 +357,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                 </div>
               </div>
             ) : (
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
                 <div className="rounded-lg bg-card p-3 border">
                   <span className="text-[11px] text-muted-foreground block">Aluguel Base</span>
                   <span className="text-base font-bold text-foreground">{formatCurrency(imovel.preco)}/mês</span>
@@ -185,6 +376,57 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
                     {formatCurrency(imovel.custo_total_mensal || imovel.preco)}/mês
                   </span>
                 </div>
+              </div>
+            )}
+          </div>
+
+          {/* Histórico Temporal de Preços */}
+          <div className="mt-4 rounded-xl border bg-card p-4">
+            <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2.5">
+              <History className="h-3.5 w-3.5" />
+              <span>Histórico de Preços e Variação Temporal</span>
+            </div>
+
+            {loadingHistory ? (
+              <div className="flex items-center gap-2 text-xs text-muted-foreground py-2">
+                <Loader2 className="h-3.5 w-3.5 animate-spin text-primary" />
+                <span>Carregando histórico...</span>
+              </div>
+            ) : historico.length <= 1 ? (
+              <p className="text-xs text-muted-foreground py-1">
+                Primeira cotação registrada. Variações temporais serão listadas automaticamente conforme novas capturas do anúncio forem realizadas.
+              </p>
+            ) : (
+              <div className="space-y-2">
+                {historico.map((h, idx) => (
+                  <div key={h.id} className="flex items-center justify-between rounded-lg border bg-secondary/20 px-3 py-2 text-xs">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-3.5 w-3.5 text-muted-foreground" />
+                      <span className="text-muted-foreground">
+                        {new Date(h.capturado_em).toLocaleDateString('pt-BR', {
+                          day: '2-digit',
+                          month: '2-digit',
+                          year: 'numeric',
+                          hour: '2-digit',
+                          minute: '2-digit',
+                        })}
+                      </span>
+                      {idx === historico.length - 1 && (
+                        <span className="rounded bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary">
+                          Atual
+                        </span>
+                      )}
+                    </div>
+                    <span className="font-bold text-foreground">
+                      {formatCurrency(Number(h.preco))}
+                      {h.custo_total_mensal && !isVenda && (
+                        <span className="text-muted-foreground text-[11px] font-normal ml-1">
+                          (Total: {formatCurrency(Number(h.custo_total_mensal))})
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                ))}
               </div>
             )}
           </div>
@@ -212,7 +454,7 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
             <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
               Decomposição Multicritério do Score
             </h4>
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {subScoreItems.map((item, idx) => (
                 <div key={idx} className="flex flex-col gap-1 rounded-lg border bg-card p-3">
                   <div className="flex items-center justify-between text-xs">

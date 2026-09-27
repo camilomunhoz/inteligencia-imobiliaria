@@ -5,6 +5,8 @@ import { scrapeUrl } from './scraper.js';
 import { cleanHtml } from './cleaner.js';
 import { extractWithOllama } from './llm.js';
 import { geocodeAddress } from './geocoder.js';
+import { scraperQueue } from './queue.js';
+import { downloadListingImages } from './image-storage.js';
 
 export interface ProgressCallback {
   (step: string, status: 'running' | 'done' | 'error', message: string, details?: unknown): void;
@@ -59,9 +61,9 @@ export async function importarImovelPorUrl(
     notify('deduplicacao', 'done', 'Imóvel inédito identificado no sistema.');
   }
 
-  // 2. Executar Raspagem com Playwright
-  notify('scraping', 'running', 'Abrindo navegador Playwright em modo stealth e carregando página...');
-  const scrapeResult = await scrapeUrl(trimmedUrl);
+  // 2. Executar Raspagem com Playwright (gerenciado via fila com rate-limiting)
+  notify('scraping', 'running', 'Aguardando vez na fila e abrindo navegador Playwright em modo stealth...');
+  const scrapeResult = await scraperQueue.add(() => scrapeUrl(trimmedUrl));
   if (!scrapeResult.success || !scrapeResult.html) {
     const errMsg = scrapeResult.error || 'Falha ao raspar a página do anúncio.';
     notify('scraping', 'error', errMsg, { errorCode: scrapeResult.errorCode });
@@ -211,6 +213,18 @@ export async function importarImovelPorUrl(
     iptu: String(iptu),
     custoTotalMensal: custoTotalMensal ? String(custoTotalMensal) : null,
   });
+
+  // Baixar fotos para armazenamento local e atualizar registro
+  try {
+    const localImages = await downloadListingImages(novoImovel.id, cleaned.images);
+    if (localImages.length > 0) {
+      await db.execute(sql`
+        UPDATE imoveis SET imagens = ${JSON.stringify(localImages)}::jsonb WHERE id = ${novoImovel.id};
+      `);
+    }
+  } catch (imgErr) {
+    console.error(`[Importador] Aviso: falha ao baixar imagens locais para o imóvel #${novoImovel.id}:`, imgErr);
+  }
 
   notify('persistencia', 'done', `Imóvel #${novoImovel.id} cadastrado com sucesso.`);
 

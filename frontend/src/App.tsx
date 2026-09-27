@@ -350,6 +350,7 @@ export const App: React.FC = () => {
       <PropertyDetailModal
         imovel={detailImovel}
         onClose={() => setDetailImovel(null)}
+        onPropertyUpdated={() => fetchImoveis()}
       />
     </div>
   );
