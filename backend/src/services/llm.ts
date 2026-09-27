@@ -108,28 +108,40 @@ Conteúdo do anúncio em Markdown:
 ${markdownText}
 ---`;
 
-  const response = await fetch(`${host}/api/chat`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model,
-      messages: [
-        {
-          role: 'user',
-          content: prompt,
+  let response;
+  try {
+    response = await fetch(`${host}/api/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model,
+        messages: [
+          {
+            role: 'user',
+            content: prompt,
+          },
+        ],
+        format: PROPERTY_JSON_SCHEMA,
+        stream: false,
+        options: {
+          temperature: 0.1,
         },
-      ],
-      format: PROPERTY_JSON_SCHEMA,
-      stream: false,
-      options: {
-        temperature: 0.1,
-      },
-    }),
-  });
+      }),
+      signal: AbortSignal.timeout(120000),
+    });
+  } catch (fetchErr: unknown) {
+    const err = fetchErr as Error;
+    if (err.name === 'TimeoutError') {
+      throw new Error(`Tempo limite excedido (2 min) ao aguardar inferência do Ollama (${model}).`);
+    }
+    throw new Error(
+      `Não foi possível conectar ao Ollama em "${host}". Verifique se o Ollama está aberto e rodando no seu computador (erro: ${err.message}).`
+    );
+  }
 
   if (!response.ok) {
     const errorText = await response.text();
-    throw new Error(`Falha na chamada ao Ollama (HTTP ${response.status}): ${errorText}`);
+    throw new Error(`Falha na resposta do Ollama (HTTP ${response.status}): ${errorText}`);
   }
 
   const json = (await response.json()) as {
