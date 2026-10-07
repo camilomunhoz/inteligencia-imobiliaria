@@ -1,0 +1,21 @@
+- quando ingerir, mudar automaticamente o modo para aluguel ou venda e dar foco no mapa.
+- colocar metragem nos detalhes e enfoque no preço por m²
+- deixa personalizáveis os pontos da fórmula e pontos notáveis
+- garantir que só apareçam nas camadas os dados que existem (praças e tal não tão aparecendo)
+- ver por que de carro e a pé tá o mesmo trajeto
+- descobrir porque a encol aparece estranha no mapa
+- colocar tag da imobiliária
+- filtrar quais apartamentos queremos que apareça no mapa (selectbox)
+- colocar carrossel de imagens (e compressão no download)
+- pins mais bonitos no mapa
+- melhorar cabeçalho
+- colocar handle pra dar resize nas colunas e também de tela cheia nas áreas
+- pensar em colocar multijob ou fila para vários aps ao mesmo tempo
+- melhorar stealth para passar no vivareal, captcha e tal
+- tirar referencias técnicas da UI, deixando vocabulário simples
+- criar modos de visualização (a) compacto com cards menores e (b) em lista
+- implementar sorting dos cards, por preço, metragem, nota, etc
+- inverter hierarquia do valor preço+condomínio com o de só o aluguel, que é mais irrelevante. o que importa é a soma
+
+- tornar o sistema agnóstico, com setup inicial de cidades
+    - inclusive pra isso seria legal um onboarding, de ao invés de fazer toda a configuração por CLI, escolher os pontos de interesse a se carregar, região, multi-cidades e tal tudo no primeiro acesso
